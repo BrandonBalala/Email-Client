@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.brandonbalala.controllers.MailFXTableLayoutController">
+   <children>
+      <TableView fx:id="mailDataTable" editable="true" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <columns>
+            <TableColumn fx:id="idColumn" prefWidth="75.0" text="%ID" />
+            <TableColumn fx:id="toColumn" prefWidth="75.0" text="%TO" />
+            <TableColumn fx:id="fromColumn" prefWidth="75.0" text="%FROM" />
+            <TableColumn fx:id="ccColumn" prefWidth="75.0" text="%CC" />
+            <TableColumn fx:id="bccColumn" prefWidth="75.0" text="%BCC" />
+            <TableColumn fx:id="subjectColumn" prefWidth="75.0" text="%SUBJECT" />
+            <TableColumn fx:id="textMessageColumn" prefWidth="75.0" text="%TEXTMESSAGE" />
+            <TableColumn fx:id="htmlMessageColumn" prefWidth="75.0" text="%HTMLMESSAGE" />
+            <TableColumn fx:id="embedColumn" prefWidth="75.0" text="%EMBED" />
+            <TableColumn fx:id="attachColumn" prefWidth="75.0" text="%ATTACH" />
+            <TableColumn fx:id="folderColumn" prefWidth="75.0" text="%FOLDER" />
+            <TableColumn fx:id="dateSentColumn" prefWidth="75.0" text="%DATESENT" />
+            <TableColumn fx:id="dateReceivedColumn" prefWidth="75.0" text="%DATERECEIVED" />
+            <TableColumn fx:id="mailStatusColumn" prefWidth="75.0" text="%MAILSTATUS" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>
