@@ -3,6 +3,7 @@ package com.brandonbalala.controllers;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.ResourceBundle;
 
 import com.brandonbalala.mailaction.BasicSendAndReceive;
 import com.brandonbalala.mailbean.MailBean;
@@ -41,6 +42,9 @@ public class MailFXHTMLEditorLayoutController {
 
 	@FXML
 	private Button cancelButton;
+	
+	@FXML
+	private ResourceBundle resources;
 
 	MailConfigBean mailConfigBean;
 	BasicSendAndReceive basicSendAndReceive;

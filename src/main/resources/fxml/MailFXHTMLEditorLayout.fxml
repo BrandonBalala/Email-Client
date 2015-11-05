@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.web.*?>
 
-<BorderPane xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.brandonbalala.controllers.MailFXHTMLEditorLayoutController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.brandonbalala.controllers.MailFXHTMLEditorLayoutController">
 	<center>
 		<BorderPane BorderPane.alignment="CENTER">
 			<top>
@@ -51,7 +51,7 @@
 		<ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
 			<items>
 				<Pane HBox.hgrow="ALWAYS" />
-            <Button fx:id="attachButton" mnemonicParsing="false" onAction="#attachFile" text="%attachFile" />
+            <Button fx:id="attachButton" mnemonicParsing="false" onAction="#attachFile" text="Attach" />
 				<Button fx:id="sendButton" mnemonicParsing="false" onAction="#sendingMail" text="%send" />
 				<Button fx:id="cancelButton" mnemonicParsing="false" onAction="#cancelSending" text="%cancel" />
 			</items>

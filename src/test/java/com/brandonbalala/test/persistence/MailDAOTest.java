@@ -319,6 +319,7 @@ public class MailDAOTest {
 		mailBean.setFromField("cs.balala.send@gmail.com");
 		mailBean.setSubjectField("TEST");
 		mailBean.setTextMessageField("TEST");
+		mailBean.setFolder("TESTING");
 		mailBean.setHTMLMessageField("<html><META http-equiv=Content-Type content=\"text/html; charset=utf-8\">"
 				+ "<body><h1>Here is my photograph embedded in this email.</h1><img src='cid:FreeFall.jpg'><h2>I'm flying!</h2></body></html>");
 		

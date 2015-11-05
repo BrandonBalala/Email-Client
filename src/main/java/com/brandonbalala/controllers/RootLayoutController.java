@@ -11,11 +11,14 @@ import com.brandonbalala.gui.MainAppFX;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class RootLayoutController {
 	@FXML
@@ -137,18 +140,22 @@ public class RootLayoutController {
 	
 	private void initEditor() {
 		try {
+			System.out.println("EDITOR");
 			FXMLLoader loader = new FXMLLoader();
 			loader.setResources(resources);
 
-			loader.setLocation(MainAppFX.class.getResource("/fxml/MailFXHTMLEditor.fxml"));
-
-			BorderPane htmlEditor = (BorderPane) loader.load();
-
-			/**
-			// Give the controller the data object.
-			mailFXWebViewLayoutController = loader.getController();
-			mailFXWebViewLayoutController.setMailDAO(mailDAO);
-			editorBorderPane.setCenter(webView);*/
+			loader.setLocation(MainAppFX.class.getResource("/fxml/MailFXHTMLEditorLayout.fxml"));
+			loader.setResources(ResourceBundle.getBundle("MessagesBundle"));
+			
+			AnchorPane htmlEditor = (AnchorPane) loader.load();
+			
+			Scene scene = new Scene(htmlEditor);
+			
+			Stage dialog = new Stage();
+			dialog.initStyle(StageStyle.UTILITY);
+			
+			dialog.setScene(scene);
+			dialog.show();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -163,9 +170,14 @@ public class RootLayoutController {
 
 		searchComboBox.getItems().addAll("ID", "Subject", "TO", "CC", "BCC", "Date Sent", "Date Received");
 	}
+	
+    @FXML
+    void sendMail(ActionEvent event) {
+    	initEditor();
+    }
 
 	@FXML
 	void searchMail(ActionEvent event) {
-
+		
 	}
 }
