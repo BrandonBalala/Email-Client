@@ -14,6 +14,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.control.ScrollPane.ScrollBarPolicy;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -144,12 +146,15 @@ public class RootLayoutController {
 			loader.setResources(resources);
 
 			loader.setLocation(MainAppFX.class.getResource("/fxml/MailFXHTMLEditorLayout.fxml"));
-			//loader.setResources(ResourceBundle.getBundle("MessagesBundle"));
 			
 			BorderPane htmlEditor = (BorderPane) loader.load();
 			
+			ScrollPane sp = new ScrollPane();
+			sp.setContent(htmlEditor);
+			
+			mailFXHTMLEditorLayoutController = loader.getController();
 			mailFXHTMLEditorLayoutController.setMailDAO(mailDAO);
-			editorBorderPane.setCenter(htmlEditor);
+			editorBorderPane.setCenter(sp);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

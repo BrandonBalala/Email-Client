@@ -7,6 +7,7 @@ import com.brandonbalala.mailbean.MailBean;
 import com.brandonbalala.persistence.MailDAO;
 
 import javafx.fxml.FXML;
+import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 
 public class MailFXWebViewLayoutController {
@@ -29,6 +30,7 @@ public class MailFXWebViewLayoutController {
     }
 
 	public void setWebViewContent(MailBean mailBean) {
+		System.out.println("in set web view content mailbean");
 		String mailDetails = "\nFROM: " + mailBean.getFromField()
 							+"\nTO: " + mailBean.toFieldProperty().get()
 							+"\nCC: " + mailBean.ccFieldProperty().get()
@@ -53,9 +55,11 @@ public class MailFXWebViewLayoutController {
 		setWebViewContent("");
 	}
 
-	private void setWebViewContent(String string) {
+	private void setWebViewContent(String content) {
+		System.out.println("in set web view content string");
+		System.out.println(content);
         // create WebView with specified local content
-		mailFXWebView.getEngine().load(string);
+		mailFXWebView.getEngine().load(content);
 	}
 	
 }

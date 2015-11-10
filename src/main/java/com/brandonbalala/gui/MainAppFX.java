@@ -46,14 +46,14 @@ public class MainAppFX extends Application {
 			// If found display the app
 			System.out.println("FOUND THE PROPERTIES");
 			configureRootLayout();
-			this.primaryStage.setTitle(ResourceBundle.getBundle("MessagesBundle").getString("TITLEFORM"));
+			this.primaryStage.setTitle(ResourceBundle.getBundle("MessagesBundle").getString("TITLEMAINAPP"));
 		} else {
 			// If properties not found display mail configuration form
 			System.out.println("DID NOT FIND THE PROPERTIES");
 			// Create the Scene and put it on the Stage
 			configureMailConfigForm();
 			// Set the window title
-			this.primaryStage.setTitle(ResourceBundle.getBundle("MessagesBundle").getString("TITLEMAINAPP"));
+			this.primaryStage.setTitle(ResourceBundle.getBundle("MessagesBundle").getString("TITLEFORM"));
 		}
 	}
 
