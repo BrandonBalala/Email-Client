@@ -71,7 +71,6 @@ public class RootLayoutController {
 		try {
 			mailFXTreeLayoutController.displayTree();
 			mailFXTableLayoutController.displayTheTable();
-			// fishFXHTMLController.displayFishAsHTML();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -145,17 +144,12 @@ public class RootLayoutController {
 			loader.setResources(resources);
 
 			loader.setLocation(MainAppFX.class.getResource("/fxml/MailFXHTMLEditorLayout.fxml"));
-			loader.setResources(ResourceBundle.getBundle("MessagesBundle"));
+			//loader.setResources(ResourceBundle.getBundle("MessagesBundle"));
 			
-			AnchorPane htmlEditor = (AnchorPane) loader.load();
+			BorderPane htmlEditor = (BorderPane) loader.load();
 			
-			Scene scene = new Scene(htmlEditor);
-			
-			Stage dialog = new Stage();
-			dialog.initStyle(StageStyle.UTILITY);
-			
-			dialog.setScene(scene);
-			dialog.show();
+			mailFXHTMLEditorLayoutController.setMailDAO(mailDAO);
+			editorBorderPane.setCenter(htmlEditor);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

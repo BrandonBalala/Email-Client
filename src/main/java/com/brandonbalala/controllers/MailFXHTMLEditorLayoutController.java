@@ -7,6 +7,7 @@ import java.util.ResourceBundle;
 
 import com.brandonbalala.mailaction.BasicSendAndReceive;
 import com.brandonbalala.mailbean.MailBean;
+import com.brandonbalala.persistence.MailDAO;
 import com.brandonbalala.properties.MailConfigBean;
 import com.brandonbalala.properties.PropertiesManager;
 
@@ -48,6 +49,11 @@ public class MailFXHTMLEditorLayoutController {
 
 	MailConfigBean mailConfigBean;
 	BasicSendAndReceive basicSendAndReceive;
+    private MailDAO mailDAO;
+    
+    public MailFXHTMLEditorLayoutController() {
+    	super();
+    }
 
 	@FXML
 	void attachFile(ActionEvent event) {
@@ -105,6 +111,10 @@ public class MailFXHTMLEditorLayoutController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+
+	public void setMailDAO(MailDAO mailDAO) {
+		this.mailDAO = mailDAO;
 	}
 
 }

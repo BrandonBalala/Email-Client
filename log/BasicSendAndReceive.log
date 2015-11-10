@@ -3212,3 +3212,10 @@ Caused by: java.lang.ClassCastException: com.brandonbalala.controllers.MailFXWeb
 [DEBUG] 2015-11-05 13:56:29.082 [JavaFX Application Thread] MainAppFX - Locale = en_US
 [DEBUG] 2015-11-05 13:59:25.911 [JavaFX Application Thread] MainAppFX - Locale = en_US
 [DEBUG] 2015-11-05 14:01:01.798 [JavaFX Application Thread] MainAppFX - Locale = en_US
+[DEBUG] 2015-11-10 13:50:54.653 [JavaFX Application Thread] MainAppFX - Locale = en_US
+[DEBUG] 2015-11-10 13:53:40.703 [JavaFX Application Thread] MainAppFX - Locale = en_US
+[DEBUG] 2015-11-10 13:54:54.441 [JavaFX Application Thread] MainAppFX - Locale = en_US
+[DEBUG] 2015-11-10 14:03:01.818 [JavaFX Application Thread] MainAppFX - Locale = en_US
+[DEBUG] 2015-11-10 14:05:46.817 [JavaFX Application Thread] MainAppFX - Locale = en_US
+[DEBUG] 2015-11-10 14:12:27.038 [JavaFX Application Thread] MainAppFX - Locale = en_US
+[DEBUG] 2015-11-10 14:16:54.040 [JavaFX Application Thread] MainAppFX - Locale = en_US
