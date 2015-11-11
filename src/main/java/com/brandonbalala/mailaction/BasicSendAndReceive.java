@@ -5,7 +5,6 @@ import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.List;
 
-
 import javax.mail.Flags;
 
 import org.slf4j.Logger;
@@ -13,8 +12,6 @@ import org.slf4j.LoggerFactory;
 
 import com.brandonbalala.mailbean.MailBean;
 import com.brandonbalala.properties.MailConfigBean;
-import com.brandonbalala.test.MethodLogger;
-import com.mysql.jdbc.log.Log;
 
 import jodd.mail.Email;
 import jodd.mail.EmailAttachment;

@@ -180,6 +180,7 @@ public class MailDAOTest {
 		mailBean.getToField().add("cs.balala.receive@gmail.com");
 		mailBean.setFromField("cs.balala.send@gmail.com");
 		mailBean.getCCField().add("cs.balala.cc@gmail.com");
+		mailBean.getCCField().add("TEST@gmail.com");
 		mailBean.getBCCField().add("cs.balala.bcc@gmail.com");
 		mailBean.setSubjectField("TEST");
 		mailBean.setTextMessageField("This is the text of the message");

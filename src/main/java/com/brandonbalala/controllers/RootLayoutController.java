@@ -147,7 +147,7 @@ public class RootLayoutController {
 
 			loader.setLocation(MainAppFX.class.getResource("/fxml/MailFXHTMLEditorLayout.fxml"));
 			
-			BorderPane htmlEditor = (BorderPane) loader.load();
+			AnchorPane htmlEditor = (AnchorPane) loader.load();
 			
 			ScrollPane sp = new ScrollPane();
 			sp.setContent(htmlEditor);

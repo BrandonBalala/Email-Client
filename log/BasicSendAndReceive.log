@@ -3236,3 +3236,43 @@ Caused by: java.lang.ClassCastException: com.brandonbalala.controllers.MailFXWeb
 [DEBUG] 2015-11-10 18:25:40.828 [JavaFX Application Thread] MainAppFX - Locale = en_CA
 [DEBUG] 2015-11-10 18:28:02.481 [JavaFX Application Thread] MainAppFX - Locale = en_CA
 [DEBUG] 2015-11-10 18:35:17.935 [JavaFX Application Thread] MainAppFX - Locale = en_CA
+[DEBUG] 2015-11-11 14:50:24.875 [JavaFX Application Thread] MainAppFX - Locale = en_US
+[DEBUG] 2015-11-11 14:51:39.932 [JavaFX Application Thread] MainAppFX - Locale = en_US
+[DEBUG] 2015-11-11 14:52:38.352 [JavaFX Application Thread] MainAppFX - Locale = en_US
+[DEBUG] 2015-11-11 14:54:05.948 [JavaFX Application Thread] MainAppFX - Locale = en_US
+[DEBUG] 2015-11-11 14:56:25.091 [JavaFX Application Thread] MainAppFX - Locale = en_US
+[DEBUG] 2015-11-11 14:56:52.328 [JavaFX Application Thread] MainAppFX - Locale = en_US
+[DEBUG] 2015-11-11 15:06:54.300 [JavaFX Application Thread] MainAppFX - Locale = en_US
+[DEBUG] 2015-11-11 15:07:31.122 [JavaFX Application Thread] MainAppFX - Locale = en_US
+[DEBUG] 2015-11-11 15:13:17.478 [JavaFX Application Thread] MainAppFX - Locale = en_US
+[INFO ] 2015-11-11 15:22:16.721 [main] MailActionTest - Starting test [testAttachWithTextAndHTML]
+[INFO ] 2015-11-11 15:22:26.409 [main] MailActionTest - Starting test [testSendBothTypeEmail]
+[INFO ] 2015-11-11 15:22:33.807 [main] MailActionTest - Starting test [testAttachAndEmbed]
+[INFO ] 2015-11-11 15:22:42.279 [main] MailActionTest - Starting test [testAttachWithHTML]
+[INFO ] 2015-11-11 15:22:50.399 [main] MailActionTest - Starting test [testAttachWithText]
+[INFO ] 2015-11-11 15:22:58.307 [main] MailActionTest - Starting test [testMultipleAttachments]
+[INFO ] 2015-11-11 15:23:07.616 [main] MailActionTest - Starting test [testEmailSentToSelf]
+[DEBUG] 2015-11-11 15:23:21.687 [main] MailBean - fromField do not match
+[INFO ] 2015-11-11 15:23:21.689 [main] MailActionTest - Failed test [testEmailSentToSelf
+Messages are not the same expected:<com.brandonbalala.mailbean.MailBean@71de3a34> but was:<com.brandonbalala.mailbean.MailBean@2e4fc791>]
+[INFO ] 2015-11-11 15:23:21.710 [main] MailActionTest - Starting test [testCCEmail]
+[INFO ] 2015-11-11 15:23:29.034 [main] MailActionTest - Starting test [testEmbedWithHTML]
+[INFO ] 2015-11-11 15:23:37.123 [main] MailActionTest - Starting test [testCCandBCCEmail]
+[INFO ] 2015-11-11 15:23:44.395 [main] MailActionTest - Starting test [testEmailToMultiplePeople]
+[INFO ] 2015-11-11 15:23:51.636 [main] MailActionTest - Starting test [testEmbedWithTextAndHTML]
+[INFO ] 2015-11-11 15:23:59.679 [main] MailActionTest - Starting test [testBCCEmail]
+[INFO ] 2015-11-11 15:24:07.345 [main] MailActionTest - Starting test [testSendHTMLEmail]
+[INFO ] 2015-11-11 15:24:15.014 [main] MailActionTest - Starting test [testEmbedWithPlainText]
+[INFO ] 2015-11-11 15:24:23.441 [main] MailActionTest - Starting test [testSendPlainEmail]
+[INFO ] 2015-11-11 15:24:41.335 [main] ManagerTest - Starting test [testWriteXml]
+[INFO ] 2015-11-11 15:24:41.336 [main] ManagerTest - MailConfigBean [userEmailAddress=cs.balala.send@gmail.com, password=abc123doremi, username=cs.balala.send@gmail.com, smtp=smtp.gmail.com, imap=imap.gmail.com, url=jdbc:mysql://localhost:, port=3306, database=EMAIL_DB, dbUsername=root, dbPassword=]
+[INFO ] 2015-11-11 15:24:41.479 [main] ManagerTest - MailConfigBean [userEmailAddress=, password=, username=, smtp=, imap=, url=, port=0, database=, dbUsername=, dbPassword=]
+[DEBUG] 2015-11-11 15:24:41.481 [main] MailConfigBean - database name do not match
+[INFO ] 2015-11-11 15:24:41.481 [main] ManagerTest - Failed test [testWriteXml
+The two beans do not match expected:<MailConfigBean [userEmailAddress=cs.balala.send@gmail.com, password=abc123doremi, username=cs.balala.send@gmail.com, smtp=smtp.gmail.com, imap=imap.gmail.com, url=jdbc:mysql://localhost:, port=3306, database=EMAIL_DB, dbUsername=root, dbPassword=]> but was:<MailConfigBean [userEmailAddress=, password=, username=, smtp=, imap=, url=, port=0, database=, dbUsername=, dbPassword=]>]
+[INFO ] 2015-11-11 15:24:41.483 [main] ManagerTest - Starting test [testWriteText]
+[INFO ] 2015-11-11 15:24:41.484 [main] ManagerTest - MailConfigBean [userEmailAddress=cs.balala.send@gmail.com, password=abc123doremi, username=cs.balala.send@gmail.com, smtp=smtp.gmail.com, imap=imap.gmail.com, url=jdbc:mysql://localhost:, port=3306, database=EMAIL_DB, dbUsername=root, dbPassword=]
+[INFO ] 2015-11-11 15:24:41.494 [main] ManagerTest - MailConfigBean [userEmailAddress=cs.balala.send@gmail.com, password=abc123doremi, username=cs.balala.send@gmail.com, smtp=smtp.gmail.com, imap=imap.gmail.com, url=jdbc:mysql://localhost:, port=3306, database=EMAIL_DB, dbUsername=root, dbPassword=]
+[INFO ] 2015-11-11 15:24:41.495 [main] ManagerTest - Starting test [testReadJarText]
+[INFO ] 2015-11-11 15:24:41.496 [main] ManagerTest - MailConfigBean [userEmailAddress=cs.balala.send@gmail.com, password=abc123doremi, username=cs.balala.send@gmail.com, smtp=smtp.gmail.com, imap=imap.gmail.com, url=jdbc:mysql://localhost:, port=3306, database=EMAIL_DB, dbUsername=root, dbPassword=]
+[INFO ] 2015-11-11 15:24:41.503 [main] ManagerTest - MailConfigBean [userEmailAddress=cs.balala.send@gmail.com, password=abc123doremi, username=cs.balala.send@gmail.com, smtp=smtp.gmail.com, imap=imap.gmail.com, url=jdbc:mysql://localhost:, port=3306, database=EMAIL_DB, dbUsername=root, dbPassword=]

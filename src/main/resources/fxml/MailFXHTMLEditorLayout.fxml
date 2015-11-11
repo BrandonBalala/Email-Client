@@ -6,55 +6,60 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.web.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.brandonbalala.controllers.MailFXHTMLEditorLayoutController">
-	<center>
-		<BorderPane BorderPane.alignment="CENTER">
-			<top>
-				<GridPane hgap="10.0" vgap="10.0" BorderPane.alignment="CENTER">
-					<columnConstraints>
-						<ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" />
-						<ColumnConstraints hgrow="SOMETIMES" />
-					</columnConstraints>
-					<rowConstraints>
-						<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-						<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-						<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-						<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-					</rowConstraints>
-					<children>
-						<Label text="%TOFIELD" />
-						<Label text="%CCFIELD" GridPane.rowIndex="1" />
-						<Label text="%BCCFIELD" GridPane.rowIndex="2" />
-						<Label text="%SUBJECTFIELD" GridPane.rowIndex="3" />
-						<TextField fx:id="toTextField" GridPane.columnIndex="1" />
-						<TextField fx:id="ccTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-						<TextField fx:id="bccTextField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-						<TextField fx:id="subjectTextField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-					</children>
-					<padding>
-						<Insets bottom="10.0" left="25.0" right="25.0" />
-					</padding>
-				</GridPane>
-			</top>
-			<BorderPane.margin>
-				<Insets />
-			</BorderPane.margin>
-			<padding>
-				<Insets bottom="10.0" top="10.0" />
-			</padding>
-			<center>
-				<HTMLEditor fx:id="htmlEditor" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" prefHeight="250.0" BorderPane.alignment="CENTER" />
-			</center>
-		</BorderPane>
-	</center>
-	<bottom>
-		<ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-			<items>
-				<Pane HBox.hgrow="ALWAYS" />
-            <Button fx:id="attachButton" mnemonicParsing="false" onAction="#attachFile" text="%ATTACH" />
-				<Button fx:id="sendButton" mnemonicParsing="false" onAction="#sendingMail" text="%SEND" />
-				<Button fx:id="cancelButton" mnemonicParsing="false" onAction="#cancelSending" text="%CANCEL" />
-			</items>
-		</ToolBar>
-	</bottom>
-</BorderPane>
+
+<AnchorPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.brandonbalala.controllers.MailFXHTMLEditorLayoutController">
+   <children>
+      <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      	<center>
+      		<BorderPane BorderPane.alignment="CENTER">
+      			<top>
+      				<GridPane hgap="10.0" vgap="10.0" BorderPane.alignment="CENTER">
+      					<columnConstraints>
+      						<ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" />
+      						<ColumnConstraints hgrow="SOMETIMES" />
+      					</columnConstraints>
+      					<rowConstraints>
+      						<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      						<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      						<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      						<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      					</rowConstraints>
+      					<children>
+      						<Label text="%TOFIELD" />
+      						<Label text="%CCFIELD" GridPane.rowIndex="1" />
+      						<Label text="%BCCFIELD" GridPane.rowIndex="2" />
+      						<Label text="%SUBJECTFIELD" GridPane.rowIndex="3" />
+      						<TextField fx:id="toTextField" GridPane.columnIndex="1" />
+      						<TextField fx:id="ccTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      						<TextField fx:id="bccTextField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      						<TextField fx:id="subjectTextField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      					</children>
+      					<padding>
+      						<Insets bottom="10.0" left="25.0" right="25.0" />
+      					</padding>
+      				</GridPane>
+      			</top>
+      			<BorderPane.margin>
+      				<Insets />
+      			</BorderPane.margin>
+      			<padding>
+      				<Insets bottom="10.0" top="10.0" />
+      			</padding>
+      			<center>
+      				<HTMLEditor fx:id="htmlEditor" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" prefHeight="250.0" BorderPane.alignment="CENTER" />
+      			</center>
+      		</BorderPane>
+      	</center>
+      	<bottom>
+      		<ToolBar BorderPane.alignment="CENTER">
+      			<items>
+      				<Pane HBox.hgrow="ALWAYS" />
+                  <Button fx:id="attachButton" mnemonicParsing="false" onAction="#attachFile" text="%ATTACH" />
+      				<Button fx:id="sendButton" mnemonicParsing="false" onAction="#sendingMail" text="%SEND" />
+      				<Button fx:id="cancelButton" mnemonicParsing="false" onAction="#cancelSending" text="%CANCEL" />
+      			</items>
+      		</ToolBar>
+      	</bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>
