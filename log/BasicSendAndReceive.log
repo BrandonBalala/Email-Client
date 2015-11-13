@@ -3408,3 +3408,5 @@ The two beans do not match expected:<MailConfigBean [userEmailAddress=cs.balala.
 [DEBUG] 2015-11-12 20:26:55.147 [JavaFX Application Thread] MainAppFX - Locale = en_CA
 [DEBUG] 2015-11-12 21:38:41.097 [JavaFX Application Thread] MainAppFX - Locale = en_CA
 [DEBUG] 2015-11-12 23:16:27.932 [JavaFX Application Thread] MainAppFX - Locale = en_CA
+[DEBUG] 2015-11-13 14:41:10.562 [JavaFX Application Thread] MainAppFX - Locale = en_US
+[DEBUG] 2015-11-13 14:41:51.565 [JavaFX Application Thread] MainAppFX - Locale = en_US
