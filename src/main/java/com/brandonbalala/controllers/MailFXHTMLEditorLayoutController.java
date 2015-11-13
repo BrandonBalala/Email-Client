@@ -47,9 +47,10 @@ public class MailFXHTMLEditorLayoutController {
 	@FXML
 	private ResourceBundle resources;
 
-	MailConfigBean mailConfigBean;
-	BasicSendAndReceive basicSendAndReceive;
+	private MailConfigBean mailConfigBean;
+	private BasicSendAndReceive basicSendAndReceive;
     private MailDAO mailDAO;
+    private RootLayoutController rootLayoutController;
     
     public MailFXHTMLEditorLayoutController() {
     	super();
@@ -65,7 +66,7 @@ public class MailFXHTMLEditorLayoutController {
 
 	@FXML
 	void cancelSending(ActionEvent event) {
-		
+		rootLayoutController.initWebView();
 	}
 
 	@FXML
@@ -116,5 +117,11 @@ public class MailFXHTMLEditorLayoutController {
 	public void setMailDAO(MailDAO mailDAO) {
 		this.mailDAO = mailDAO;
 	}
+
+	public void setRootLayout(RootLayoutController rootLayoutController) {
+		this.rootLayoutController = rootLayoutController;
+	}
+	
+	
 
 }

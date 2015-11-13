@@ -65,7 +65,7 @@ public class ManagerTest {
         log.info(mailConfig1.toString());
         pm.writeXmlProperties("", "TextProps", mailConfig1);
 
-        MailConfigBean mailConfig2 = pm.loadTextProperties("", "TextProps");
+        MailConfigBean mailConfig2 = pm.loadXmlProperties("", "TextProps");
         log.info(mailConfig2.toString());
 
         assertEquals("The two beans do not match", mailConfig1, mailConfig2);
@@ -94,7 +94,7 @@ public class ManagerTest {
         }
     }
     
-    @Test
+    @Ignore
     public void testReadJarText() throws NullPointerException, IOException {
         MailConfigBean mailConfig1 = new MailConfigBean("cs.balala.send@gmail.com", "abc123doremi", "cs.balala.send@gmail.com", "smtp.gmail.com", "imap.gmail.com", "Brandon Balala",
         		"jdbc:mysql://localhost:", 3306, "EMAIL_DB", "root", "");

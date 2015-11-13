@@ -121,7 +121,7 @@ public class RootLayoutController {
 		}
 	}
 	
-	private void initWebView() {
+	public void initWebView() {
 		try {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setResources(resources);
@@ -154,6 +154,7 @@ public class RootLayoutController {
 			
 			mailFXHTMLEditorLayoutController = loader.getController();
 			mailFXHTMLEditorLayoutController.setMailDAO(mailDAO);
+			mailFXHTMLEditorLayoutController.setRootLayout(this);
 			editorBorderPane.setCenter(sp);
 		} catch (IOException e) {
 			e.printStackTrace();
