@@ -20,6 +20,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.ScrollPane.ScrollBarPolicy;
 import javafx.scene.control.TextField;
@@ -50,6 +51,9 @@ public class RootLayoutController {
 
 	@FXML
 	private ResourceBundle resources;
+	
+    @FXML
+    private Label footerLabel;
 
 	private MailDAO mailDAO;
 	private MailFXTreeLayoutController mailFXTreeLayoutController;
@@ -131,6 +135,7 @@ public class RootLayoutController {
 			// Give the controller the data object.
 			mailFXTreeLayoutController = loader.getController();
 			mailFXTreeLayoutController.setMailDAO(mailDAO);
+			mailFXTreeLayoutController.setRootLayout(this);
 			treeBorderPane.setCenter(treeView);
 		} catch (SQLException | IOException e) {
 			e.printStackTrace();
@@ -223,8 +228,14 @@ public class RootLayoutController {
 				default:
 					break;
 				}
-
+				
 				mailFXTableLayoutController.getMailDataTable().setItems(mbList);
+				
+				if(mbList.size() > 0)
+					setFooterLabelText(mbList.size() + " result(s) found");
+				else
+					setFooterLabelText("No results found");
+				
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -247,4 +258,29 @@ public class RootLayoutController {
 
 		alert.showAndWait();
 	}
+	
+    @FXML
+    void deleteMail(ActionEvent event) {
+
+    }
+    
+    @FXML
+    void createFolder(ActionEvent event) {
+		System.out.println("SHOW DIALOG");
+		boolean createClicked = mainApp.showCreateFolderDialog();
+		
+		if (createClicked){
+			try {
+				mailFXTreeLayoutController.clearTree();
+				mailFXTreeLayoutController.displayTree();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+    }
+    
+    public void setFooterLabelText(String text){
+    	footerLabel.setText(text);
+    }
 }

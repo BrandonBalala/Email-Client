@@ -24,6 +24,7 @@ public class MailFXTreeLayoutController {
     
 	@FXML
 	private ResourceBundle resources;
+	private RootLayoutController rootLayoutController;
     
     
 	/**
@@ -77,6 +78,7 @@ public class MailFXTreeLayoutController {
 	 * @throws SQLException
 	 */
 	public void displayTree() throws SQLException {
+		
 		// Retreive the list of fish
 		ObservableList<MailBean> folderNames = mailDAO.findAllFolder();
 		
@@ -114,12 +116,27 @@ public class MailFXTreeLayoutController {
 		
 		try {
 			mbList = mailDAO.findMailByFolderName(mailBean.getValue().getFolder());
+			
+			if(mbList.size() > 0)
+				rootLayoutController.setFooterLabelText(mbList.size() + " result(s) found");
+			else
+				rootLayoutController.setFooterLabelText("No results found");
+			
 			mailFXTableLayoutController.getMailDataTable().setItems(mbList);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
+	}
+	
+	public void clearTree(){
+		//Clear everything in the tree
+		mailFXTreeView.getRoot().getChildren().clear();
+	}
+
+	public void setRootLayout(RootLayoutController rootLayoutController) {
+		this.rootLayoutController = rootLayoutController;
 	}
 
 }

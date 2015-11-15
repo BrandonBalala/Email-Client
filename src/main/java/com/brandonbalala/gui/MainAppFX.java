@@ -9,6 +9,7 @@ import java.util.ResourceBundle;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.brandonbalala.controllers.CreateFolderDialogController;
 import com.brandonbalala.controllers.MailConfigFormController;
 import com.brandonbalala.controllers.MailFXHTMLEditorLayoutController;
 import com.brandonbalala.controllers.RootLayoutController;
@@ -46,18 +47,7 @@ public class MainAppFX extends Application {
 		// The Stage comes from the framework so make a copy to use elsewhere
 		this.primaryStage = primaryStage;
 
-		//File f = new File("src/main/resources/mailConfig.properties");
-		//if (f.exists() && !f.isDirectory()) {
-		//	// If found display the app
-		//	System.out.println("FOUND THE PROPERTIES");
-		//	configureRootLayout();
-		//} else {
-		//	// If properties not found display mail configuration form
-		//	System.out.println("DID NOT FIND THE PROPERTIES");
-		//	// Create the Scene and put it on the Stage
-			configureMailConfigForm();
-
-		//}
+		configureMailConfigForm();
 	}
 
 	public void configureRootLayout() {
@@ -166,14 +156,14 @@ public class MainAppFX extends Application {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(MainAppFX.class.getResource("/fxml/MailFXHTMLEditorLayout.fxml"));
 			loader.setResources(ResourceBundle.getBundle("MessagesBundle"));
-			AnchorPane page = (AnchorPane) loader.load();
+			AnchorPane dialog = (AnchorPane) loader.load();
 			
 			// Create the dialog Stage.
 			Stage dialogStage = new Stage();
 			dialogStage.setTitle(ResourceBundle.getBundle("MessagesBundle").getString("TITLEEDITOR"));
 			dialogStage.initModality(Modality.WINDOW_MODAL);
 			dialogStage.initOwner(primaryStage);
-			Scene scene = new Scene(page);
+			Scene scene = new Scene(dialog);
 			dialogStage.setScene(scene);
 
 			// Set the person into the controller.
@@ -189,6 +179,51 @@ public class MainAppFX extends Application {
 
 			return controller.isSendClicked();
 		} catch (IOException e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
+	
+	/**
+	 * Opens a dialog to edit details for the specified person. If the user
+	 * clicks OK, the changes are saved into the provided person object and true
+	 * is returned.
+	 * 
+	 * @param person
+	 *            the person object to be edited
+	 * @return true if the user clicked OK, false otherwise.
+	 */
+	public boolean showCreateFolderDialog() {
+		try {
+			System.out.println("IN CREATE FOLDER DIALOG");
+			// Load the fxml file and create a new stage for the popup dialog.
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MainAppFX.class.getResource("/fxml/CreateFolderDialog.fxml"));
+			loader.setResources(ResourceBundle.getBundle("MessagesBundle"));
+			GridPane dialog = (GridPane) loader.load();
+			
+			// Create the dialog Stage.
+			Stage dialogStage = new Stage();
+			dialogStage.setTitle(ResourceBundle.getBundle("MessagesBundle").getString("TITLEFOLDER"));
+			dialogStage.initModality(Modality.WINDOW_MODAL);
+			dialogStage.initOwner(primaryStage);
+			Scene scene = new Scene(dialog);
+			dialogStage.setScene(scene);
+
+			// Set the person into the controller.
+			CreateFolderDialogController controller = loader.getController();
+			controller.setMailDAO(mailDAO);
+			controller.setDialogStage(dialogStage);
+			//controller.setPerson(person);
+
+			// Set the dialog icon.
+			//dialogStage.getIcons().add(new Image(MainApp.class.getResourceAsStream("/images/edit.png")));
+
+			// Show the dialog and wait until the user closes it
+			dialogStage.showAndWait();
+
+			return controller.isCreateClicked();
+		} catch (IOException | SQLException e) {
 			e.printStackTrace();
 			return false;
 		}

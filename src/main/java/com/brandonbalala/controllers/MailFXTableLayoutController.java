@@ -17,46 +17,13 @@ public class MailFXTableLayoutController {
     private TableView<MailBean> mailDataTable;
 
     @FXML
-    private TableColumn<MailBean, Number> idColumn;
-
-    @FXML
     private TableColumn<MailBean, String> toColumn;
-
-    @FXML
-    private TableColumn<MailBean, String> fromColumn;
-
-    @FXML
-    private TableColumn<MailBean, String> ccColumn;
-
-    @FXML
-    private TableColumn<MailBean, String> bccColumn;
 
     @FXML
     private TableColumn<MailBean, String> subjectColumn;
 
     @FXML
-    private TableColumn<MailBean, String> textMessageColumn;
-
-    @FXML
-    private TableColumn<MailBean, String> htmlMessageColumn;
-
-    @FXML
-    private TableColumn<MailBean, String> embedColumn;
-
-    @FXML
-    private TableColumn<MailBean, String> attachColumn;
-
-    @FXML
-    private TableColumn<MailBean, String> folderColumn;
-
-    @FXML
-    private TableColumn<MailBean, LocalDateTime> dateSentColumn;
-
-    @FXML
     private TableColumn<MailBean, LocalDateTime> dateReceivedColumn;
-
-    @FXML
-    private TableColumn<MailBean, Number> mailStatusColumn;
     
     private MailFXWebViewLayoutController mailFXWebViewLayoutController;
     private MailDAO mailDAO;
@@ -83,20 +50,9 @@ public class MailFXTableLayoutController {
 	 */
 	@FXML
 	private void initialize() {
-		idColumn.setCellValueFactory(cellValue -> cellValue.getValue().idProperty());
 		toColumn.setCellValueFactory(cellValue -> cellValue.getValue().toFieldProperty());
-		fromColumn.setCellValueFactory(cellValue -> cellValue.getValue().fromFieldProperty());
-		ccColumn.setCellValueFactory(cellValue -> cellValue.getValue().ccFieldProperty());
-		bccColumn.setCellValueFactory(cellValue -> cellValue.getValue().bccFieldProperty());
-		subjectColumn.setCellValueFactory(cellValue -> cellValue.getValue().bccFieldProperty());
-		textMessageColumn.setCellValueFactory(cellValue -> cellValue.getValue().textMessageFieldProperty());
-		htmlMessageColumn.setCellValueFactory(cellValue -> cellValue.getValue().htmlMessageProperty());
-		embedColumn.setCellValueFactory(cellValue -> cellValue.getValue().embedFieldProperty());
-		attachColumn.setCellValueFactory(cellValue -> cellValue.getValue().attachFieldProperty());
-		folderColumn.setCellValueFactory(cellValue -> cellValue.getValue().folderProperty());
-		dateSentColumn.setCellValueFactory(cellValue -> cellValue.getValue().dateSentProperty());
+		subjectColumn.setCellValueFactory(cellValue -> cellValue.getValue().subjectFieldProperty());
 		dateReceivedColumn.setCellValueFactory(cellValue -> cellValue.getValue().dateReceivedProperty());
-		mailStatusColumn.setCellValueFactory(cellValue -> cellValue.getValue().mailStatusProperty());
 	
 		adjustColumnWidths();
 		

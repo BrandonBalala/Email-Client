@@ -1,0 +1,88 @@
+.background {
+    -fx-background-color: #1a1a1a;
+}
+
+.label {
+    -fx-font-size: 12pt;
+    -fx-font-family: "Helvetica";
+    -fx-text-fill: white;
+    -fx-opacity: 0.6;
+}
+
+.label-bright {
+    -fx-font-size: 12pt;
+    -fx-font-family: "Helvetica";
+    -fx-text-fill: white;
+    -fx-opacity: 1;
+}
+
+.label-header {
+    -fx-font-size: 20pt;
+    -fx-font-family: "Helvetica";
+    -fx-text-fill: white;
+    -fx-opacity: 1;
+}
+
+.split-pane-divider {
+   -fx-background-color: transparent, #C0C0C0;
+}
+
+.split-pane {
+   -fx-box-border: transparent;
+}
+
+.menu-bar {
+    -fx-background-color: #1a1a1a;
+}
+
+.context-menu {
+    -fx-background-color: #1a1a1a;
+}
+
+.menu-bar .label {
+    -fx-font-size: 12pt;
+    -fx-font-family: "Helvetica";
+    -fx-text-fill: white;
+    -fx-opacity: 0.90;
+}
+
+.tool-bar {
+	  -fx-background-color:
+        linear-gradient(#686868 0%, #232723 25%, #373837 75%, #757575 100%),
+        linear-gradient(#020b02, #3a3a3a),
+        linear-gradient(#9d9e9d 0%, #6b6a6b 20%, #343534 80%, #242424 100%),
+        linear-gradient(#8a8a8a 0%, #6b6a6b 20%, #343534 80%, #262626 100%),
+        linear-gradient(#777777 0%, #606060 50%, #505250 51%, #2a2b2a 100%);
+}
+
+.table-view .column-header .label {
+	
+    -fx-font-size: 12pt;
+    -fx-font-family: "Helvetica";
+    -fx-background-color: transparent, #C0C0C0;
+    -fx-text-fill: white;
+    -fx-alignment: center-left;
+    -fx-opacity: 1;
+}
+
+.button {
+    -fx-text-fill:white;
+    -fx-font-family: "Helvetica";
+	-fx-padding: 5 15 5 15;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+
+    -fx-background-color:
+    linear-gradient(#686868 0%, #232723 25%, #373837 75%, #757575 100%),
+    linear-gradient(#020b02, #3a3a3a);
+    -fx-background-insets: 0,1;
+    -fx-background-radius: 9,8;
+}
+
+.button:hover {
+    -fx-cursor: hand;
+}
+
+.backgroundGrey {
+	-fx-background-color: transparent, #C0C0C0;
+}

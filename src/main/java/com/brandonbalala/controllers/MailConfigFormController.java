@@ -1,9 +1,11 @@
 package com.brandonbalala.controllers;
 
 import javafx.application.Platform;
+import javafx.beans.binding.Bindings;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import javafx.util.converter.NumberStringConverter;
 
 import java.io.File;
 import java.io.IOException;
@@ -61,6 +63,7 @@ public class MailConfigFormController {
     @FXML
     void createMailConfig(ActionEvent event) {
     	//MUST DO VALIDATION FOR ALL OF THE PROPERTIES
+    	/*
     	mailConfigBean.setUserEmailAddress(emailAddressTextField.textProperty().get());
     	mailConfigBean.setPassword(passwordTextField.textProperty().get());
     	mailConfigBean.setUsername(usernameTextField.textProperty().get());
@@ -71,7 +74,7 @@ public class MailConfigFormController {
     	mailConfigBean.setPort(Integer.parseInt(portTextField.textProperty().get()));
     	mailConfigBean.setDatabase(dbNameTextField.textProperty().get());
     	mailConfigBean.setDbUsername(dbUsernameTextField.textProperty().get());
-    	mailConfigBean.setDbPassword(dbPasswordTextField.textProperty().get());
+    	mailConfigBean.setDbPassword(dbPasswordTextField.textProperty().get());*/
     	
     	try {
 			pm.writeTextProperties("src/main/resources", "mailConfig", mailConfigBean);
@@ -88,22 +91,36 @@ public class MailConfigFormController {
 		File file = new File("src/main/resources/mailConfig.properties");
 		if (file.exists() && !file.isDirectory()) {
 			try {
-				MailConfigBean mb = pm.loadTextProperties("src/main/resources", "mailConfig");
-				emailAddressTextField.setText(mb.getUserEmailAddress());
-				passwordTextField.setText(mb.getPassword());
-				usernameTextField.setText(mb.getUserEmailAddress());
-				smtpTextField.setText(mb.getSmtp());
-				imapTextField.setText(mb.getImap());
-				fullNameTextField.setText(mb.getFullName());
-				dbURLTextField.setText(mb.getUrl());
-				portTextField.setText(Integer.toString(mb.getPort()));
-				dbNameTextField.setText(mb.getDatabase());
-				dbUsernameTextField.setText(mb.getDbUsername());
-				dbPasswordTextField.setText(mb.getDbPassword());
+				mailConfigBean = pm.loadTextProperties("src/main/resources", "mailConfig");
+				
+				/*
+				emailAddressTextField.setText(mailConfigBean.getUserEmailAddress());
+				passwordTextField.setText(mailConfigBean.getPassword());
+				usernameTextField.setText(mailConfigBean.getUserEmailAddress());
+				smtpTextField.setText(mailConfigBean.getSmtp());
+				imapTextField.setText(mailConfigBean.getImap());
+				fullNameTextField.setText(mailConfigBean.getFullName());
+				dbURLTextField.setText(mailConfigBean.getUrl());
+				portTextField.setText(Integer.toString(mailConfigBean.getPort()));
+				dbNameTextField.setText(mailConfigBean.getDatabase());
+				dbUsernameTextField.setText(mailConfigBean.getDbUsername());
+				dbPasswordTextField.setText(mailConfigBean.getDbPassword());*/
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
+		
+		Bindings.bindBidirectional(emailAddressTextField.textProperty(), mailConfigBean.userEmailAddressProperty());
+		Bindings.bindBidirectional(passwordTextField.textProperty(), mailConfigBean.passwordProperty());
+		Bindings.bindBidirectional(usernameTextField.textProperty(), mailConfigBean.usernameProperty());
+		Bindings.bindBidirectional(smtpTextField.textProperty(), mailConfigBean.smtpProperty());
+		Bindings.bindBidirectional(imapTextField.textProperty(), mailConfigBean.imapProperty());
+		Bindings.bindBidirectional(fullNameTextField.textProperty(), mailConfigBean.fullNameProperty());
+		Bindings.bindBidirectional(dbURLTextField.textProperty(), mailConfigBean.urlProperty());
+		Bindings.bindBidirectional(portTextField.textProperty(), mailConfigBean.portProperty(), new NumberStringConverter());
+		Bindings.bindBidirectional(dbNameTextField.textProperty(), mailConfigBean.databaseProperty());
+		Bindings.bindBidirectional(dbUsernameTextField.textProperty(), mailConfigBean.dbUsernameProperty());
+		Bindings.bindBidirectional(dbPasswordTextField.textProperty(), mailConfigBean.dbPasswordProperty());
 	}
 
     @FXML

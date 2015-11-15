@@ -11,14 +11,11 @@ import com.brandonbalala.persistence.MailDAO;
 import com.brandonbalala.properties.MailConfigBean;
 import com.brandonbalala.properties.PropertiesManager;
 
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
 import javafx.scene.web.HTMLEditor;
-import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 public class MailFXHTMLEditorLayoutController {
@@ -52,8 +49,8 @@ public class MailFXHTMLEditorLayoutController {
 
 	private MailConfigBean mailConfigBean;
 	private BasicSendAndReceive basicSendAndReceive;
-    private MailDAO mailDAO;
-    private RootLayoutController rootLayoutController;
+    //private MailDAO mailDAO;
+    //private RootLayoutController rootLayoutController;
     private Stage dialogStage;
     private boolean sendClicked = false;
     
@@ -111,22 +108,24 @@ public class MailFXHTMLEditorLayoutController {
 	@FXML
 	private void initialize() {
 		PropertiesManager pm = new PropertiesManager();
+		basicSendAndReceive = new BasicSendAndReceive();
 		try {
 			mailConfigBean = pm.loadTextProperties("src/main/resources", "mailConfig");
-			basicSendAndReceive = new BasicSendAndReceive();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 	}
 
+	/*
 	public void setMailDAO(MailDAO mailDAO) {
 		this.mailDAO = mailDAO;
 	}
 
 	public void setRootLayout(RootLayoutController rootLayoutController) {
 		this.rootLayoutController = rootLayoutController;
-	}
+	}*/
 	
     /**
      * Sets the stage of this dialog.

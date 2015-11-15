@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.GridPane?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.brandonbalala.controllers.RootLayoutController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="850.0" styleClass="background" stylesheets="@../styles/DarkThemeModified.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.brandonbalala.controllers.RootLayoutController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
@@ -37,18 +38,32 @@
    <center>
       <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <top>
-            <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <ToolBar prefHeight="40.0" BorderPane.alignment="CENTER">
               <items>
-                <Button mnemonicParsing="false" onAction="#sendMail" text="New" />
+                  <Button minWidth="60.0" mnemonicParsing="false" onAction="#createFolder" prefWidth="90.0" text="New" />
+                  <Button minWidth="60.0" mnemonicParsing="false" onAction="#deleteMail" prefWidth="90.0" text="Delete" />
+                <Button minWidth="60.0" mnemonicParsing="false" onAction="#sendMail" prefWidth="90.0" text="Compose" />
                 <Pane HBox.hgrow="ALWAYS" />
                 <HBox>
                    <children>
                       <TextField fx:id="searchTextField" />
                       <ComboBox fx:id="searchComboBox" prefWidth="150.0" />
-                      <Button fx:id="searchButton" mnemonicParsing="false" onAction="#searchMail" text="Search" />
+                      <Button fx:id="searchButton" minWidth="60.0" mnemonicParsing="false" onAction="#searchMail" prefWidth="90.0" text="Search">
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin></Button>
                    </children>
+                     <padding>
+                        <Insets top="3.0" />
+                     </padding>
                 </HBox>
               </items>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+               <padding>
+                  <Insets bottom="5.0" left="15.0" right="15.0" top="5.0" />
+               </padding>
             </ToolBar>
          </top>
          <center>
@@ -56,7 +71,7 @@
               <items>
                 <AnchorPane fx:id="treeAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                      <children>
-                        <BorderPane fx:id="treeBorderPane" layoutX="10.0" layoutY="32.0" prefHeight="316.0" prefWidth="220.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <BorderPane fx:id="treeBorderPane" prefHeight="316.0" prefWidth="220.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                      </children></AnchorPane>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                      <children>
@@ -64,7 +79,7 @@
                           <items>
                             <AnchorPane fx:id="tableAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                                  <children>
-                                    <BorderPane fx:id="tableBorderPane" prefHeight="154.0" prefWidth="520.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    <BorderPane fx:id="tableBorderPane" layoutX="6.0" prefHeight="154.0" prefWidth="520.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="0.0" />
                                  </children></AnchorPane>
                             <AnchorPane fx:id="editorAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                                  <children>
@@ -80,7 +95,7 @@
       </BorderPane>
    </center>
    <bottom>
-      <Label text="Label" BorderPane.alignment="CENTER_LEFT">
+      <Label fx:id="footerLabel" BorderPane.alignment="CENTER_LEFT">
          <padding>
             <Insets left="10.0" />
          </padding>

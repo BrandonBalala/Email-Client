@@ -33,17 +33,17 @@ public class MailFXWebViewLayoutController {
 	public void setWebViewContent(MailBean mailBean) {
 		System.out.println("in set web view content mailbean");
 		String mailDetails = "<body>"
-							+"<p>"+"FROM: " + mailBean.getFromField()+"</p>"
-							+"<p>"+"TO: " + mailBean.toFieldProperty().get()+"</p>"
+							+"<p>"+"From: " + mailBean.getFromField()+"</p>"
+							+"<p>"+"To: " + mailBean.toFieldProperty().get()+"</p>"
 							+"<p>"+"CC: " + mailBean.ccFieldProperty().get()+"</p>"
 							+"<p>"+"BCC: " + mailBean.bccFieldProperty().get()+"</p>"
 							+"<p>"+"Date sent: " + mailBean.getDateSent()+"</p><hr>"
-							+"<h1>"+"Subject: " + mailBean.getSubjectField()+"</h1><hr><br>";
+							+"<h3>"+"Subject: " + mailBean.getSubjectField()+"</h3><hr><br>";
 		
-		if(mailBean.getHTMLMessageField() == "")
-			mailDetails += "<h2>" + mailBean.getHTMLMessageField() + "</h2>";
+		if(!mailBean.getHTMLMessageField().isEmpty())
+			mailDetails += mailBean.getHTMLMessageField();
 		else
-			mailDetails += "<h2>" + mailBean.getTextMessageField() + "</h2>";
+			mailDetails += mailBean.getTextMessageField();
 		
 		mailDetails += "</body>";
 							
