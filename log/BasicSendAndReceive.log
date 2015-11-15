@@ -3410,3 +3410,90 @@ The two beans do not match expected:<MailConfigBean [userEmailAddress=cs.balala.
 [DEBUG] 2015-11-12 23:16:27.932 [JavaFX Application Thread] MainAppFX - Locale = en_CA
 [DEBUG] 2015-11-13 14:41:10.562 [JavaFX Application Thread] MainAppFX - Locale = en_US
 [DEBUG] 2015-11-13 14:41:51.565 [JavaFX Application Thread] MainAppFX - Locale = en_US
+[DEBUG] 2015-11-14 16:27:58.777 [JavaFX Application Thread] MainAppFX - Locale = en_CA
+[DEBUG] 2015-11-14 16:33:12.106 [JavaFX Application Thread] MainAppFX - Locale = en_CA
+[DEBUG] 2015-11-14 16:35:02.638 [JavaFX Application Thread] MainAppFX - Locale = en_CA
+[DEBUG] 2015-11-14 16:37:12.021 [JavaFX Application Thread] MainAppFX - Locale = en_CA
+[DEBUG] 2015-11-14 16:38:06.826 [JavaFX Application Thread] MainAppFX - Locale = en_CA
+[DEBUG] 2015-11-14 16:56:48.263 [JavaFX Application Thread] MainAppFX - Locale = en_CA
+[DEBUG] 2015-11-14 16:59:47.914 [JavaFX Application Thread] MainAppFX - Locale = en_CA
+[DEBUG] 2015-11-14 17:00:16.779 [JavaFX Application Thread] MainAppFX - Locale = en_CA
+[DEBUG] 2015-11-14 17:02:05.408 [JavaFX Application Thread] MainAppFX - Locale = en_CA
+[DEBUG] 2015-11-14 17:04:28.957 [JavaFX Application Thread] MainAppFX - Locale = en_CA
+[DEBUG] 2015-11-14 17:58:36.645 [JavaFX Application Thread] MainAppFX - Locale = en_CA
+[DEBUG] 2015-11-14 18:02:43.079 [JavaFX Application Thread] MainAppFX - Locale = en_CA
+[DEBUG] 2015-11-14 18:03:09.580 [JavaFX Application Thread] MainAppFX - Locale = en_CA
+[DEBUG] 2015-11-14 18:04:11.695 [JavaFX Application Thread] MainAppFX - Locale = en_CA
+[DEBUG] 2015-11-14 18:26:09.425 [JavaFX Application Thread] MainAppFX - Locale = en_CA
+[DEBUG] 2015-11-14 20:02:13.939 [JavaFX Application Thread] MainAppFX - Locale = en_CA
+[DEBUG] 2015-11-14 20:03:02.543 [JavaFX Application Thread] MainAppFX - Locale = en_CA
+[DEBUG] 2015-11-14 20:09:40.461 [JavaFX Application Thread] MainAppFX - Locale = en_CA
+[DEBUG] 2015-11-14 21:09:54.991 [JavaFX Application Thread] MainAppFX - Locale = en_CA
+[DEBUG] 2015-11-14 21:11:50.820 [JavaFX Application Thread] MainAppFX - Locale = en_CA
+[DEBUG] 2015-11-14 21:16:40.907 [JavaFX Application Thread] MainAppFX - Locale = en_CA
+[DEBUG] 2015-11-14 21:19:34.772 [JavaFX Application Thread] MainAppFX - Locale = en_CA
+[DEBUG] 2015-11-14 21:20:22.913 [JavaFX Application Thread] MainAppFX - Locale = en_CA
+[DEBUG] 2015-11-14 21:21:41.769 [JavaFX Application Thread] MainAppFX - Locale = en_CA
+[DEBUG] 2015-11-14 21:22:56.788 [JavaFX Application Thread] MainAppFX - Locale = en_CA
+[DEBUG] 2015-11-14 21:23:39.734 [JavaFX Application Thread] MainAppFX - Locale = en_CA
+[DEBUG] 2015-11-14 21:42:50.651 [JavaFX Application Thread] MainAppFX - Locale = en_CA
+[DEBUG] 2015-11-14 23:03:26.386 [JavaFX Application Thread] MainAppFX - Locale = en_CA
+[DEBUG] 2015-11-14 23:23:19.343 [JavaFX Application Thread] MainAppFX - Locale = en_CA
+[ERROR] 2015-11-15 00:27:35.115 [JavaFX Application Thread] MainAppFX - null
+javafx.fxml.LoadException: Resource "TITLE" not found.
+/E:/SCHOOL/_____FALL2015/SOFTWARE%20DEV%20PROJECT/git/JAG-PHASE3/target/classes/fxml/MailConfigForm.fxml:56
+
+	at javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2597) ~[jfxrt.jar:?]
+	at javafx.fxml.FXMLLoader.access$100(FXMLLoader.java:103) ~[jfxrt.jar:?]
+	at javafx.fxml.FXMLLoader$Element.resolvePrefixedValue(FXMLLoader.java:424) ~[jfxrt.jar:?]
+	at javafx.fxml.FXMLLoader$Element.processValue(FXMLLoader.java:363) ~[jfxrt.jar:?]
+	at javafx.fxml.FXMLLoader$Element.processPropertyAttribute(FXMLLoader.java:325) ~[jfxrt.jar:?]
+	at javafx.fxml.FXMLLoader$Element.processInstancePropertyAttributes(FXMLLoader.java:235) ~[jfxrt.jar:?]
+	at javafx.fxml.FXMLLoader$ValueElement.processEndElement(FXMLLoader.java:767) ~[jfxrt.jar:?]
+	at javafx.fxml.FXMLLoader.processEndElement(FXMLLoader.java:2823) ~[jfxrt.jar:?]
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2532) ~[jfxrt.jar:?]
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2441) ~[jfxrt.jar:?]
+	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2409) ~[jfxrt.jar:?]
+	at com.brandonbalala.gui.MainAppFX.configureMailConfigForm(MainAppFX.java:130) ~[classes/:?]
+	at com.brandonbalala.gui.MainAppFX.start(MainAppFX.java:58) ~[classes/:?]
+	at com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$163(LauncherImpl.java:863) ~[jfxrt.jar:?]
+	at com.sun.javafx.application.PlatformImpl.lambda$runAndWait$176(PlatformImpl.java:326) ~[jfxrt.jar:?]
+	at com.sun.javafx.application.PlatformImpl.lambda$null$174(PlatformImpl.java:295) ~[jfxrt.jar:?]
+	at java.security.AccessController.doPrivileged(Native Method) ~[?:1.8.0_60]
+	at com.sun.javafx.application.PlatformImpl.lambda$runLater$175(PlatformImpl.java:294) ~[jfxrt.jar:?]
+	at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95) ~[jfxrt.jar:?]
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method) ~[jfxrt.jar:?]
+	at com.sun.glass.ui.win.WinApplication.lambda$null$149(WinApplication.java:191) ~[jfxrt.jar:?]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_60]
+[ERROR] 2015-11-15 00:29:28.505 [JavaFX Application Thread] MainAppFX - null
+javafx.fxml.LoadException: Resource "TITLE" not found.
+/E:/SCHOOL/_____FALL2015/SOFTWARE%20DEV%20PROJECT/git/JAG-PHASE3/target/classes/fxml/MailConfigForm.fxml:56
+
+	at javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2597) ~[jfxrt.jar:?]
+	at javafx.fxml.FXMLLoader.access$100(FXMLLoader.java:103) ~[jfxrt.jar:?]
+	at javafx.fxml.FXMLLoader$Element.resolvePrefixedValue(FXMLLoader.java:424) ~[jfxrt.jar:?]
+	at javafx.fxml.FXMLLoader$Element.processValue(FXMLLoader.java:363) ~[jfxrt.jar:?]
+	at javafx.fxml.FXMLLoader$Element.processPropertyAttribute(FXMLLoader.java:325) ~[jfxrt.jar:?]
+	at javafx.fxml.FXMLLoader$Element.processInstancePropertyAttributes(FXMLLoader.java:235) ~[jfxrt.jar:?]
+	at javafx.fxml.FXMLLoader$ValueElement.processEndElement(FXMLLoader.java:767) ~[jfxrt.jar:?]
+	at javafx.fxml.FXMLLoader.processEndElement(FXMLLoader.java:2823) ~[jfxrt.jar:?]
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2532) ~[jfxrt.jar:?]
+	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2441) ~[jfxrt.jar:?]
+	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:2409) ~[jfxrt.jar:?]
+	at com.brandonbalala.gui.MainAppFX.configureMailConfigForm(MainAppFX.java:130) ~[classes/:?]
+	at com.brandonbalala.gui.MainAppFX.start(MainAppFX.java:58) ~[classes/:?]
+	at com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$163(LauncherImpl.java:863) ~[jfxrt.jar:?]
+	at com.sun.javafx.application.PlatformImpl.lambda$runAndWait$176(PlatformImpl.java:326) ~[jfxrt.jar:?]
+	at com.sun.javafx.application.PlatformImpl.lambda$null$174(PlatformImpl.java:295) ~[jfxrt.jar:?]
+	at java.security.AccessController.doPrivileged(Native Method) ~[?:1.8.0_60]
+	at com.sun.javafx.application.PlatformImpl.lambda$runLater$175(PlatformImpl.java:294) ~[jfxrt.jar:?]
+	at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95) ~[jfxrt.jar:?]
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method) ~[jfxrt.jar:?]
+	at com.sun.glass.ui.win.WinApplication.lambda$null$149(WinApplication.java:191) ~[jfxrt.jar:?]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_60]
+[DEBUG] 2015-11-15 00:31:22.438 [JavaFX Application Thread] MainAppFX - Locale = en_CA
+[DEBUG] 2015-11-15 00:31:34.337 [JavaFX Application Thread] MainAppFX - Locale = en_CA
+[DEBUG] 2015-11-15 01:18:49.440 [JavaFX Application Thread] MainAppFX - Locale = en_CA
+[DEBUG] 2015-11-15 01:23:59.067 [JavaFX Application Thread] MainAppFX - Locale = en_CA
+[DEBUG] 2015-11-15 01:24:33.078 [JavaFX Application Thread] MainAppFX - Locale = en_CA
+[DEBUG] 2015-11-15 02:01:18.527 [JavaFX Application Thread] MainAppFX - Locale = en_CA

@@ -116,8 +116,7 @@ public class MailFXTableLayoutController {
 	}
 
 	private void adjustColumnWidths() {
-		// TODO Auto-generated method stub
-		
+		// TODO Auto-generated method stub	
 	}
 
 	/**

@@ -5,8 +5,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
+import java.io.File;
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.ResourceBundle;
 
+import com.brandonbalala.gui.MainAppFX;
+import com.brandonbalala.mailbean.MailBean;
 import com.brandonbalala.properties.*;
 
 public class MailConfigFormController {
@@ -45,6 +50,8 @@ public class MailConfigFormController {
     private TextField fullNameTextField;
     
     private MailConfigBean mailConfigBean;
+    private PropertiesManager pm;
+    private MainAppFX mainApp;
     
     public MailConfigFormController(){
     	super();
@@ -66,18 +73,45 @@ public class MailConfigFormController {
     	mailConfigBean.setDbUsername(dbUsernameTextField.textProperty().get());
     	mailConfigBean.setDbPassword(dbPasswordTextField.textProperty().get());
     	
-    	PropertiesManager pm = new PropertiesManager();
-    	
     	try {
 			pm.writeTextProperties("src/main/resources", "mailConfig", mailConfigBean);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			mainApp.configureRootLayout();
+    	} catch (IOException e) {
 			e.printStackTrace();
 		}
     }
+    
+	@FXML
+	private void initialize() {
+		pm = new PropertiesManager();
+		
+		File file = new File("src/main/resources/mailConfig.properties");
+		if (file.exists() && !file.isDirectory()) {
+			try {
+				MailConfigBean mb = pm.loadTextProperties("src/main/resources", "mailConfig");
+				emailAddressTextField.setText(mb.getUserEmailAddress());
+				passwordTextField.setText(mb.getPassword());
+				usernameTextField.setText(mb.getUserEmailAddress());
+				smtpTextField.setText(mb.getSmtp());
+				imapTextField.setText(mb.getImap());
+				fullNameTextField.setText(mb.getFullName());
+				dbURLTextField.setText(mb.getUrl());
+				portTextField.setText(Integer.toString(mb.getPort()));
+				dbNameTextField.setText(mb.getDatabase());
+				dbUsernameTextField.setText(mb.getDbUsername());
+				dbPasswordTextField.setText(mb.getDbPassword());
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+	}
 
     @FXML
     void exitForm(ActionEvent event) {
     	Platform.exit();
     }
+
+	public void setMainApp(MainAppFX mainApp) {
+		this.mainApp = mainApp;
+	}
 }

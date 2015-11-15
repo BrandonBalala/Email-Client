@@ -49,7 +49,7 @@
       <TextField fx:id="dbPasswordTextField" GridPane.columnIndex="1" GridPane.rowIndex="11" />
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="2">
          <children>
-            <Label text="%TITLE" textOverrun="CLIP">
+            <Label text="%TITLEFORM" textOverrun="CLIP">
                <font>
                   <Font size="20.0" />
                </font>

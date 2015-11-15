@@ -20,6 +20,7 @@ public class MailFXWebViewLayoutController {
     private ResourceBundle resources;
     
     private MailDAO mailDAO;
+	private RootLayoutController rootLayoutController;
 
     public MailFXWebViewLayoutController(){
     	super();
@@ -31,19 +32,22 @@ public class MailFXWebViewLayoutController {
 
 	public void setWebViewContent(MailBean mailBean) {
 		System.out.println("in set web view content mailbean");
-		String mailDetails = "\nFROM: " + mailBean.getFromField()
-							+"\nTO: " + mailBean.toFieldProperty().get()
-							+"\nCC: " + mailBean.ccFieldProperty().get()
-							+"\nBCC: " + mailBean.bccFieldProperty().get()
-							+"\nDate sent: " + mailBean.getDateSent()
-							+"\nSubject: " + mailBean.getSubjectField();
+		String mailDetails = "<body>"
+							+"<p>"+"FROM: " + mailBean.getFromField()+"</p>"
+							+"<p>"+"TO: " + mailBean.toFieldProperty().get()+"</p>"
+							+"<p>"+"CC: " + mailBean.ccFieldProperty().get()+"</p>"
+							+"<p>"+"BCC: " + mailBean.bccFieldProperty().get()+"</p>"
+							+"<p>"+"Date sent: " + mailBean.getDateSent()+"</p><hr>"
+							+"<h1>"+"Subject: " + mailBean.getSubjectField()+"</h1><hr><br>";
 		
 		if(mailBean.getHTMLMessageField() == "")
-			mailDetails += "\n\n" + mailBean.getHTMLMessageField();
+			mailDetails += "<h2>" + mailBean.getHTMLMessageField() + "</h2>";
 		else
-			mailDetails += "\n\n" + mailBean.getTextMessageField();
+			mailDetails += "<h2>" + mailBean.getTextMessageField() + "</h2>";
+		
+		mailDetails += "</body>";
 							
-		setWebViewContent(mailDetails);
+		mailFXWebView.getEngine().loadContent(mailDetails);
 	}
 	
 	/**
@@ -52,14 +56,12 @@ public class MailFXWebViewLayoutController {
 	 */
 	@FXML
 	private void initialize() {
-		setWebViewContent("");
+		
 	}
 
-	private void setWebViewContent(String content) {
-		System.out.println("in set web view content string");
-		System.out.println(content);
-        // create WebView with specified local content
-		mailFXWebView.getEngine().load(content);
+	public void setRootLayout(RootLayoutController rootLayoutController) {
+		this.rootLayoutController = rootLayoutController;
+		
 	}
 	
 }

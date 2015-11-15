@@ -6,17 +6,24 @@ import java.util.ResourceBundle;
 
 import com.brandonbalala.persistence.MailDAO;
 import com.brandonbalala.persistence.MailDAOImpl;
-import com.brandonbalala.gui.MainAppFX;
 
+import com.brandonbalala.gui.MainAppFX;
+import com.brandonbalala.mailbean.MailBean;
+
+import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.ScrollPane.ScrollBarPolicy;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
@@ -48,11 +55,20 @@ public class RootLayoutController {
 	private MailFXTreeLayoutController mailFXTreeLayoutController;
 	private MailFXTableLayoutController mailFXTableLayoutController;
 	private MailFXWebViewLayoutController mailFXWebViewLayoutController;
-	private MailFXHTMLEditorLayoutController mailFXHTMLEditorLayoutController;
-	
+	private MainAppFX mainApp;
+
 	public RootLayoutController() {
 		super();
 		mailDAO = new MailDAOImpl();
+	}
+
+	/**
+	 * Is called by the main application to give a reference back to itself.
+	 * 
+	 * @param mainApp
+	 */
+	public void setMainApp(MainAppFX mainApp) {
+		this.mainApp = mainApp;
 	}
 
 	/**
@@ -120,7 +136,7 @@ public class RootLayoutController {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void initWebView() {
 		try {
 			FXMLLoader loader = new FXMLLoader();
@@ -133,51 +149,102 @@ public class RootLayoutController {
 			// Give the controller the data object.
 			mailFXWebViewLayoutController = loader.getController();
 			mailFXWebViewLayoutController.setMailDAO(mailDAO);
+			mailFXWebViewLayoutController.setRootLayout(this);
 			editorBorderPane.setCenter(webView);
 		} catch (SQLException | IOException e) {
 			e.printStackTrace();
 		}
 	}
-	
-	private void initEditor() {
-		try {
-			System.out.println("EDITOR");
-			FXMLLoader loader = new FXMLLoader();
-			loader.setResources(resources);
 
-			loader.setLocation(MainAppFX.class.getResource("/fxml/MailFXHTMLEditorLayout.fxml"));
-			
-			AnchorPane htmlEditor = (AnchorPane) loader.load();
-			
-			ScrollPane sp = new ScrollPane();
-			sp.setContent(htmlEditor);
-			
-			mailFXHTMLEditorLayoutController = loader.getController();
-			mailFXHTMLEditorLayoutController.setMailDAO(mailDAO);
-			mailFXHTMLEditorLayoutController.setRootLayout(this);
-			editorBorderPane.setCenter(sp);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-	
-	
-	
+	/*
+	 * private void initEditor() { try { System.out.println("EDITOR");
+	 * FXMLLoader loader = new FXMLLoader(); loader.setResources(resources);
+	 * 
+	 * loader.setLocation(MainAppFX.class.getResource(
+	 * "/fxml/MailFXHTMLEditorLayout.fxml"));
+	 * 
+	 * AnchorPane htmlEditor = (AnchorPane) loader.load();
+	 * 
+	 * ScrollPane sp = new ScrollPane(); sp.setContent(htmlEditor);
+	 * 
+	 * mailFXHTMLEditorLayoutController = loader.getController();
+	 * mailFXHTMLEditorLayoutController.setMailDAO(mailDAO);
+	 * mailFXHTMLEditorLayoutController.setRootLayout(this);
+	 * editorBorderPane.setCenter(sp); } catch (IOException e) {
+	 * e.printStackTrace(); } }
+	 */
 
 	public void setComboBoxData() {
 
 		searchComboBox.getItems().clear();
 
-		searchComboBox.getItems().addAll("ID", "Subject", "TO", "CC", "BCC", "Date Sent", "Date Received");
+		searchComboBox.getItems().addAll("Subject", "To", "From", "CC", "BCC", "Folder", "Date Sent", "Date Received");
 	}
-	
-    @FXML
-    void sendMail(ActionEvent event) {
-    	initEditor();
-    }
+
+	@FXML
+	void sendMail(ActionEvent event) {
+		System.out.println("SHOW DIALOG");
+		mainApp.showSendMailDialog();
+	}
 
 	@FXML
 	void searchMail(ActionEvent event) {
-		
+		if (!searchTextField.getText().equals("")) {
+			String search = searchTextField.getText();
+			String choice = (String) searchComboBox.getSelectionModel().getSelectedItem().toString();
+			ObservableList<MailBean> mbList = FXCollections.observableArrayList();
+
+			try {
+				switch (choice) {
+				case "Subject":
+					mbList = mailDAO.findMailBySubject(search);
+					break;
+				case "To":
+					mbList = mailDAO.findMailByToField(search);
+					break;
+				case "From":
+					mbList = mailDAO.findMailByFromField(search);
+					break;
+				case "CC":
+					mbList = mailDAO.findMailByCCField(search);
+					break;
+				case "BCC":
+					mbList = mailDAO.findMailByBCCField(search);
+					break;
+				case "Folder":
+					mbList = mailDAO.findMailByFolderName(search);
+					break;
+				// case "Date Sent":
+				// mbList = mailDAO.findMailBySubject(search);
+				// break;
+				// case "Date Received":
+				// mbList = mailDAO.findMailBySubject(search);
+				// break;
+				default:
+					break;
+				}
+
+				mailFXTableLayoutController.getMailDataTable().setItems(mbList);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+		}
+	}
+
+	@FXML
+	void menuClose(ActionEvent event) {
+		Platform.exit();
+	}
+
+	@FXML
+	void handleAbout(ActionEvent event) {
+		Alert alert = new Alert(AlertType.INFORMATION);
+		alert.setTitle(resources.getString("TITLEABOUT"));
+		alert.setHeaderText(resources.getString("HEADERTEXTABOUT"));
+		alert.setContentText(resources.getString("CONTEXTABOUT"));
+
+		alert.showAndWait();
 	}
 }

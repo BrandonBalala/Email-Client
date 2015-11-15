@@ -11,12 +11,15 @@ import com.brandonbalala.persistence.MailDAO;
 import com.brandonbalala.properties.MailConfigBean;
 import com.brandonbalala.properties.PropertiesManager;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.web.HTMLEditor;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
 public class MailFXHTMLEditorLayoutController {
 
@@ -51,6 +54,8 @@ public class MailFXHTMLEditorLayoutController {
 	private BasicSendAndReceive basicSendAndReceive;
     private MailDAO mailDAO;
     private RootLayoutController rootLayoutController;
+    private Stage dialogStage;
+    private boolean sendClicked = false;
     
     public MailFXHTMLEditorLayoutController() {
     	super();
@@ -66,7 +71,7 @@ public class MailFXHTMLEditorLayoutController {
 
 	@FXML
 	void cancelSending(ActionEvent event) {
-		rootLayoutController.initWebView();
+		dialogStage.close();
 	}
 
 	@FXML
@@ -99,6 +104,7 @@ public class MailFXHTMLEditorLayoutController {
 			mb.setHTMLMessageField(htmlMessage);
 
 			basicSendAndReceive.sendEmail(mb, mailConfigBean);
+			sendClicked = true;
 		}
 	}
 
@@ -122,6 +128,25 @@ public class MailFXHTMLEditorLayoutController {
 		this.rootLayoutController = rootLayoutController;
 	}
 	
-	
+    /**
+     * Sets the stage of this dialog.
+     * 
+     * @param dialogStage
+     */
+    public void setDialogStage(Stage dialogStage) {
+        this.dialogStage = dialogStage;
+        
+        // Set the dialog icon.
+        //this.dialogStage.getIcons().add(new Image("file:resources/images/edit.png"));
+    }
+    
+    /**
+     * Returns true if the user clicked SEND, false otherwise.
+     * 
+     * @return
+     */
+    public boolean isSendClicked() {
+        return sendClicked;
+    }
 
 }
