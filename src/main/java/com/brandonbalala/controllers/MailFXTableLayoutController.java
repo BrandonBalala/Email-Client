@@ -3,6 +3,9 @@ package com.brandonbalala.controllers;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.brandonbalala.mailbean.MailBean;
 import com.brandonbalala.persistence.MailDAO;
 import com.brandonbalala.persistence.MailDAOImpl;
@@ -12,7 +15,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
 public class MailFXTableLayoutController {
-
+	private final Logger log = LoggerFactory.getLogger(getClass().getName());
     @FXML
     private TableView<MailBean> mailDataTable;
 
@@ -29,17 +32,25 @@ public class MailFXTableLayoutController {
     private MailDAO mailDAO;
     
 	/**
-	 * The constructor. The constructor is called before the initialize()
-	 * method.
+	 * Constructor
 	 */
 	public MailFXTableLayoutController() {
 		super();
 	}
     
+	/**
+	 * Set the instance of MailDAO
+	 * 
+	 * @param mailDAO
+	 */
     public void setMailDAO(MailDAO mailDAO) throws SQLException{
     	this.mailDAO = mailDAO;
     }
-    
+     
+    /**
+     * Set the web view controller
+     * @param mailFXWebViewLayoutController
+     */
     public void setMailFXWebViewLayoutController(MailFXWebViewLayoutController mailFXWebViewLayoutController){
     	this.mailFXWebViewLayoutController = mailFXWebViewLayoutController;
     }
@@ -53,8 +64,6 @@ public class MailFXTableLayoutController {
 		toColumn.setCellValueFactory(cellValue -> cellValue.getValue().toFieldProperty());
 		subjectColumn.setCellValueFactory(cellValue -> cellValue.getValue().subjectFieldProperty());
 		dateReceivedColumn.setCellValueFactory(cellValue -> cellValue.getValue().dateReceivedProperty());
-	
-		adjustColumnWidths();
 		
 		// Listen for selection changes and show the fishData details when
 		// changed.
@@ -66,13 +75,13 @@ public class MailFXTableLayoutController {
 		
 	}
 	
+	/**
+	 * Show the chosen row from the table on the web view 
+	 * @param mailBean
+	 */
 	private void showMailDetails(MailBean mailBean) {
 		System.out.println(mailBean.getToField().get(0));
 		mailFXWebViewLayoutController.setWebViewContent(mailBean);
-	}
-
-	private void adjustColumnWidths() {
-		// TODO Auto-generated method stub	
 	}
 
 	/**
@@ -87,7 +96,7 @@ public class MailFXTableLayoutController {
 	}
     
 	/**
-	 * The table displays the fish data
+	 * The table displays all the mails
 	 * 
 	 * @throws SQLException
 	 */

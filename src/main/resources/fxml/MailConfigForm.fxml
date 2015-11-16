@@ -7,69 +7,95 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<GridPane hgap="25.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" styleClass="background" stylesheets="@../styles/DarkThemeModified.css" vgap="10.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.brandonbalala.controllers.MailConfigFormController">
-  <columnConstraints>
-    <ColumnConstraints halignment="RIGHT" />
-    <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" />
-  </columnConstraints>
-  <rowConstraints>
-      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-  </rowConstraints>
-   <children>
-      <Label text="%EMAIL" GridPane.rowIndex="1" />
-      <Label text="%PASSWORD" GridPane.rowIndex="2" />
-      <Label text="%USERNAME" GridPane.rowIndex="3" />
-      <Label text="%SMTP" GridPane.rowIndex="5" />
-      <Label text="%IMAP" GridPane.rowIndex="6" />
-      <Label text="%URL" GridPane.rowIndex="7" />
-      <Label text="%PORT" GridPane.rowIndex="8" />
-      <Label text="%DBNAME" GridPane.rowIndex="9" />
-      <Label text="%DBUSERNAME" GridPane.rowIndex="10" />
-      <Label text="%DBPASSWORD" GridPane.rowIndex="11" />
-      <TextField fx:id="emailAddressTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-      <TextField fx:id="passwordTextField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-      <TextField fx:id="usernameTextField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-      <TextField fx:id="smtpTextField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-      <TextField fx:id="imapTextField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-      <TextField fx:id="dbURLTextField" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-      <TextField fx:id="portTextField" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-      <TextField fx:id="dbNameTextField" GridPane.columnIndex="1" GridPane.rowIndex="9" />
-      <TextField fx:id="dbUsernameTextField" GridPane.columnIndex="1" GridPane.rowIndex="10" />
-      <TextField fx:id="dbPasswordTextField" GridPane.columnIndex="1" GridPane.rowIndex="11" />
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="2">
+<BorderPane styleClass="background" stylesheets="@../styles/DarkThemeModified.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.brandonbalala.controllers.MailConfigFormController">
+   <center>
+      <GridPane hgap="25.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" styleClass="background" stylesheets="@../styles/DarkThemeModified.css" vgap="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="RIGHT" />
+          <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
          <children>
-            <Label text="%TITLEFORM" textOverrun="CLIP">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Label>
+            <Label text="%EMAIL" GridPane.rowIndex="1" />
+            <Label text="%PASSWORD" GridPane.rowIndex="2" />
+            <Label text="%USERNAME" GridPane.rowIndex="3" />
+            <Label text="%SMTP" GridPane.rowIndex="5" />
+            <Label text="%IMAP" GridPane.rowIndex="6" />
+            <Label text="%URL" GridPane.rowIndex="7" />
+            <Label text="%PORT" GridPane.rowIndex="8" />
+            <Label text="%DBNAME" GridPane.rowIndex="9" />
+            <Label text="%DBUSERNAME" GridPane.rowIndex="10" />
+            <Label text="%DBPASSWORD" GridPane.rowIndex="11" />
+            <TextField fx:id="emailAddressTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="passwordTextField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="usernameTextField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="smtpTextField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="imapTextField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <TextField fx:id="dbURLTextField" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <TextField fx:id="portTextField" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <TextField fx:id="dbNameTextField" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+            <TextField fx:id="dbUsernameTextField" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+            <TextField fx:id="dbPasswordTextField" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="2">
+               <children>
+                  <Label text="%TITLEFORM" textOverrun="CLIP">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="25.0" GridPane.columnSpan="2" GridPane.rowIndex="12">
+               <children>
+                  <Button minWidth="75.0" mnemonicParsing="false" onAction="#createMailConfig" prefWidth="90.0" text="%SUBMIT" />
+                  <Button mnemonicParsing="false" onAction="#exitForm" prefWidth="90.0" text="%EXIT" />
+               </children>
+            </HBox>
+            <Label text="%FULLNAME" GridPane.rowIndex="4" />
+            <TextField fx:id="fullNameTextField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
          </children>
-         <GridPane.margin>
-            <Insets />
-         </GridPane.margin>
-      </HBox>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="25.0" GridPane.columnSpan="2" GridPane.rowIndex="12">
-         <children>
-            <Button minWidth="75.0" mnemonicParsing="false" onAction="#createMailConfig" prefWidth="90.0" text="%SUBMIT" />
-            <Button mnemonicParsing="false" onAction="#exitForm" prefWidth="90.0" text="%EXIT" />
-         </children>
-      </HBox>
-      <Label text="%FULLNAME" GridPane.rowIndex="4" />
-      <TextField fx:id="fullNameTextField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-   </children>
-   <padding>
-      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-   </padding>
-</GridPane>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </GridPane>
+   </center>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="%FILE">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleClose" text="%CLOSE" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="%LANGUAGE">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleChangeEnlglish" text="English" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleChangeFrench" text="Français" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="%HELP">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleAbout" text="%ABOUT" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>

@@ -11,25 +11,25 @@
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
-          <Menu mnemonicParsing="false" text="File">
+          <Menu mnemonicParsing="false" text="%FILE">
             <items>
-                  <MenuItem mnemonicParsing="false" onAction="#menuClose" text="Close" />
+                  <MenuItem mnemonicParsing="false" onAction="#menuClose" text="%CLOSE" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
+          <Menu mnemonicParsing="false" text="%EDIT">
             <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
+              <MenuItem mnemonicParsing="false" onAction="#handleDelete" text="%DELETE" />
             </items>
           </Menu>
-            <Menu mnemonicParsing="false" text="Language">
+            <Menu mnemonicParsing="false" text="%LANGUAGE">
               <items>
-                <MenuItem mnemonicParsing="false" text="English" />
-                  <MenuItem mnemonicParsing="false" text="Français" />
+                <MenuItem mnemonicParsing="false" onAction="#handleChangeEnglish" text="English" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleChangeFrench" text="Français" />
               </items>
             </Menu>
-          <Menu mnemonicParsing="false" text="Help">
+          <Menu mnemonicParsing="false" text="%HELP">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#handleAbout" text="About" />
+              <MenuItem mnemonicParsing="false" onAction="#handleAbout" text="%ABOUT" />
             </items>
           </Menu>
         </menus>
@@ -40,15 +40,15 @@
          <top>
             <ToolBar prefHeight="40.0" BorderPane.alignment="CENTER">
               <items>
-                  <Button minWidth="60.0" mnemonicParsing="false" onAction="#createFolder" prefWidth="90.0" text="New" />
-                  <Button minWidth="60.0" mnemonicParsing="false" onAction="#deleteMail" prefWidth="90.0" text="Delete" />
-                <Button minWidth="60.0" mnemonicParsing="false" onAction="#sendMail" prefWidth="90.0" text="Compose" />
+                  <Button minWidth="60.0" mnemonicParsing="false" onAction="#createFolder" prefWidth="90.0" text="%NEW" />
+                  <Button minWidth="60.0" mnemonicParsing="false" onAction="#deleteMail" prefWidth="90.0" text="%DELETE" />
+                <Button minWidth="60.0" mnemonicParsing="false" onAction="#sendMail" prefWidth="90.0" text="%COMPOSE" />
                 <Pane HBox.hgrow="ALWAYS" />
                 <HBox>
                    <children>
                       <TextField fx:id="searchTextField" />
                       <ComboBox fx:id="searchComboBox" prefWidth="150.0" />
-                      <Button fx:id="searchButton" minWidth="60.0" mnemonicParsing="false" onAction="#searchMail" prefWidth="90.0" text="Search">
+                      <Button fx:id="searchButton" minWidth="60.0" mnemonicParsing="false" onAction="#searchMail" prefWidth="90.0" text="%SEARCH">
                            <HBox.margin>
                               <Insets left="5.0" />
                            </HBox.margin></Button>
@@ -79,7 +79,7 @@
                           <items>
                             <AnchorPane fx:id="tableAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                                  <children>
-                                    <BorderPane fx:id="tableBorderPane" layoutX="6.0" prefHeight="154.0" prefWidth="520.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="0.0" />
+                                    <BorderPane fx:id="tableBorderPane" layoutX="6.0" layoutY="-91.0" prefHeight="290.0" prefWidth="653.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                  </children></AnchorPane>
                             <AnchorPane fx:id="editorAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                                  <children>
