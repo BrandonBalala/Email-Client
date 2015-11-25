@@ -17,8 +17,10 @@ import com.brandonbalala.properties.PropertiesManager;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.web.HTMLEditor;
 import javafx.stage.Stage;
 
@@ -126,20 +128,21 @@ public class MailFXHTMLEditorLayoutController {
 			mb.setSubjectField(subject);
 			mb.setHTMLMessageField(htmlMessage);
 			mb.setFromField(mailConfigBean.getUserEmailAddress());
-			
-			//Sending
-			basicSendAndReceive.sendEmail(mb, mailConfigBean);
 
 			try {
+				//Sending
+				basicSendAndReceive.sendEmail(mb, mailConfigBean);
+				
 				//Storing in database
 				mailDAO.createMail(mb);
+				
+				sendClicked = true;
+				dialogStage.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-
-			sendClicked = true;
-			dialogStage.close();
+				displayErrorMessage(resources.getString("ERRORDB"), resources.getString("ERRORTRYAGAIN"));
+			} catch (Exception e) {
+				displayErrorMessage(resources.getString("ERRORSENDING"), resources.getString("ERRORTRYAGAIN"));
+		    }
 		}
 	}
 
@@ -189,6 +192,16 @@ public class MailFXHTMLEditorLayoutController {
 	 */
 	public boolean isSendClicked() {
 		return sendClicked;
+	}
+	
+	private void displayErrorMessage(String headerError, String msg){
+		log.info("Showing error alert");
+		Alert alert = new Alert(AlertType.INFORMATION);
+		alert.setTitle(resources.getString("TITLEERROR"));
+		alert.setHeaderText(headerError);
+		alert.setContentText(msg);
+
+		alert.showAndWait();
 	}
 
 }
