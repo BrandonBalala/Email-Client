@@ -4705,3 +4705,25 @@ Caused by: java.lang.NullPointerException
 [DEBUG] 2015-11-25 15:28:57.056 [JavaFX Application Thread] MailBean - toFields do not match
 [INFO ] 2015-11-25 15:29:14.198 [JavaFX Application Thread] RootLayoutController - Showing send mail dialog
 [INFO ] 2015-11-25 15:29:14.198 [JavaFX Application Thread] MainAppFX - Show send mail dialog
+[INFO ] 2015-12-10 09:39:23.859 [JavaFX Application Thread] MainAppFX - Configuring mail config form
+[INFO ] 2015-12-10 09:39:24.080 [JavaFX Application Thread] MailConfigFormController - Initializing the mail config bean in controller
+[INFO ] 2015-12-10 09:39:27.497 [JavaFX Application Thread] MailConfigFormController - Saving the mail config bean to disk
+[INFO ] 2015-12-10 09:39:27.509 [JavaFX Application Thread] MainAppFX - Configuring root layout
+[INFO ] 2015-12-10 09:39:27.563 [JavaFX Application Thread] RootLayoutController - Initializing the Root Layout
+[INFO ] 2015-12-10 09:39:27.563 [JavaFX Application Thread] RootLayoutController - Initializing the Tree Layout
+[INFO ] 2015-12-10 09:39:27.600 [JavaFX Application Thread] RootLayoutController - Initializing the Table Layout
+[INFO ] 2015-12-10 09:39:27.632 [JavaFX Application Thread] RootLayoutController - Initializing the Web View Layout
+[INFO ] 2015-12-10 09:40:07.561 [JavaFX Application Thread] RootLayoutController - Changing language to french
+[INFO ] 2015-12-10 09:40:07.561 [JavaFX Application Thread] MainAppFX - Configuring root layout
+[INFO ] 2015-12-10 09:40:07.591 [JavaFX Application Thread] RootLayoutController - Initializing the Root Layout
+[INFO ] 2015-12-10 09:40:07.591 [JavaFX Application Thread] RootLayoutController - Initializing the Tree Layout
+[INFO ] 2015-12-10 09:40:07.596 [JavaFX Application Thread] RootLayoutController - Initializing the Table Layout
+[INFO ] 2015-12-10 09:40:07.600 [JavaFX Application Thread] RootLayoutController - Initializing the Web View Layout
+[INFO ] 2015-12-10 09:40:17.800 [JavaFX Application Thread] RootLayoutController - Showing About alert
+[INFO ] 2015-12-10 09:40:27.119 [JavaFX Application Thread] RootLayoutController - Changing language to french
+[INFO ] 2015-12-10 09:40:28.552 [JavaFX Application Thread] RootLayoutController - Changing language to french
+[INFO ] 2015-12-10 09:40:29.344 [JavaFX Application Thread] RootLayoutController - Changing language to french
+[INFO ] 2015-12-10 09:40:30.168 [JavaFX Application Thread] RootLayoutController - Changing language to french
+[INFO ] 2015-12-10 09:40:48.662 [JavaFX Application Thread] RootLayoutController - Delete mail
+[INFO ] 2015-12-10 09:41:06.310 [JavaFX Application Thread] RootLayoutController - Showing send mail dialog
+[INFO ] 2015-12-10 09:41:06.311 [JavaFX Application Thread] MainAppFX - Show send mail dialog
