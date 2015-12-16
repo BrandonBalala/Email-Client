@@ -48,10 +48,18 @@ public class MailFXTableLayoutController {
 		super();
 	}
 	
+	/**
+	 * Get current folder name displayed
+	 * @return currentFolderNameDisplayed
+	 */
 	public String getCurrentFolderNameDisplayed(){
 		return currentFolderNameDisplayed;
 	}
 	
+	/**
+	 * Set current folder name displayed
+	 * @param folderName
+	 */
 	public void setCurrentFolderNameDisplayed(String folderName){
 		this.currentFolderNameDisplayed = folderName;
 	}
@@ -74,6 +82,9 @@ public class MailFXTableLayoutController {
 		this.mailFXWebViewLayoutController = mailFXWebViewLayoutController;
 	}
 	
+	/**
+	 * Update the content of the table with the new emails from database if any
+	 */
 	public void updateTableContent(){
 		ObservableList<MailBean> mbList;
 
@@ -162,6 +173,10 @@ public class MailFXTableLayoutController {
 		mailDataTable.setItems(mailDAO.findAllMail());
 	}
 
+	/**
+	 * Fired as a row in the table is being dragged
+	 * @param event
+	 */
 	@FXML
 	private void dragDetected(MouseEvent event) {
 		/* drag was detected, start drag-and-drop gesture */
@@ -172,6 +187,8 @@ public class MailFXTableLayoutController {
 
 		/* put a string on dragboard */
 		ClipboardContent content = new ClipboardContent();
+		
+		//Passing in the id of the mail table
 		content.putString(String.valueOf(mailDataTable.getSelectionModel().getSelectedItem().getId()));
 
 		db.setContent(content);

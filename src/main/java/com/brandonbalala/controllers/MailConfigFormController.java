@@ -83,24 +83,6 @@ public class MailConfigFormController {
 	@FXML
 	void createMailConfig(ActionEvent event) {
 		log.info("Saving the mail config bean to disk");
-		// TODO Must do validation
-		/*
-		 * mailConfigBean.setUserEmailAddress(emailAddressTextField.textProperty
-		 * ().get());
-		 * mailConfigBean.setPassword(passwordTextField.textProperty().get());
-		 * mailConfigBean.setUsername(usernameTextField.textProperty().get());
-		 * mailConfigBean.setSmtp(smtpTextField.textProperty().get());
-		 * mailConfigBean.setImap(imapTextField.textProperty().get());
-		 * mailConfigBean.setFullName(fullNameTextField.textProperty().get());
-		 * mailConfigBean.setUrl(dbURLTextField.textProperty().get());
-		 * mailConfigBean.setPort(Integer.parseInt(portTextField.textProperty().
-		 * get()));
-		 * mailConfigBean.setDatabase(dbNameTextField.textProperty().get());
-		 * mailConfigBean.setDbUsername(dbUsernameTextField.textProperty().get()
-		 * );
-		 * mailConfigBean.setDbPassword(dbPasswordTextField.textProperty().get()
-		 * );
-		 */
 
 		try {
 			// Saving the mailConfigBean
@@ -119,23 +101,8 @@ public class MailConfigFormController {
 		File file = new File("./mailConfig.properties");
 		if (file.exists() && !file.isDirectory()) {
 			try {
-				// Loading the porperty file
+				// Loading the property file
 				mailConfigBean = pm.loadTextProperties("", "mailConfig");
-
-				/*
-				 * emailAddressTextField.setText(mailConfigBean.
-				 * getUserEmailAddress());
-				 * passwordTextField.setText(mailConfigBean.getPassword());
-				 * usernameTextField.setText(mailConfigBean.getUserEmailAddress(
-				 * )); smtpTextField.setText(mailConfigBean.getSmtp());
-				 * imapTextField.setText(mailConfigBean.getImap());
-				 * fullNameTextField.setText(mailConfigBean.getFullName());
-				 * dbURLTextField.setText(mailConfigBean.getUrl());
-				 * portTextField.setText(Integer.toString(mailConfigBean.getPort
-				 * ())); dbNameTextField.setText(mailConfigBean.getDatabase());
-				 * dbUsernameTextField.setText(mailConfigBean.getDbUsername());
-				 * dbPasswordTextField.setText(mailConfigBean.getDbPassword());
-				 */
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

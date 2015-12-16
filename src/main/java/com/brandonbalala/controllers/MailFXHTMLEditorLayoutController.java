@@ -168,16 +168,23 @@ public class MailFXHTMLEditorLayoutController {
 		receiveMessages();
 	}
 
+	
+	/**
+	 * Receive new messages if any and adds them to the database
+	 */
 	private void receiveMessages() {
 		ArrayList<MailBean> mailBeans = basicSendAndReceive.receiveEmail(mailConfigBean);
-		log.info("Number of mails received: " + mailBeans.size());
 		
-		for(MailBean mailbean : mailBeans){
-			try {
-				mailDAO.createMail(mailbean);
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+		if(mailBeans != null){
+			log.info("Number of mails received: " + mailBeans.size());
+			
+			for(MailBean mailbean : mailBeans){
+				try {
+					mailDAO.createMail(mailbean);
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		}
 	}

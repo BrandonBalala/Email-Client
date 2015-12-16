@@ -98,6 +98,7 @@ public class MailFXTreeLayoutController {
 					setGraphic(null);
 				}
 
+				//Adding event for when element is dropped onto the TreeCell
 				setOnDragDropped(new EventHandler<DragEvent>() {
 
 					@Override
@@ -133,6 +134,7 @@ public class MailFXTreeLayoutController {
 
 				});
 
+				//Adding event for when element is being dragged over  the TreeCell
 				setOnDragOver(new EventHandler<DragEvent>() {
 
 					@Override

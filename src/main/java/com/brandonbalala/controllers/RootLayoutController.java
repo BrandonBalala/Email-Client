@@ -76,10 +76,10 @@ public class RootLayoutController {
 	private MailFXTableLayoutController mailFXTableLayoutController;
 	private MailFXWebViewLayoutController mailFXWebViewLayoutController;
 	private MainAppFX mainApp;
-	
+
 	private MailConfigBean mailConfigBean;
 	private BasicSendAndReceive basicSendAndReceive;
-	
+
 	private Timer timer;
 
 	/**
@@ -120,7 +120,7 @@ public class RootLayoutController {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 		PropertiesManager pm = new PropertiesManager();
 		basicSendAndReceive = new BasicSendAndReceive();
 		try {
@@ -129,20 +129,20 @@ public class RootLayoutController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		receiveMailEveryTenMins();
 	}
 
 	private void receiveMailEveryTenMins() {
 		timer = new Timer();
-	    timer.scheduleAtFixedRate(new TimerTask() {
-	        @Override
-	        public void run() {
-	        	log.info("UPDATING WITH NEW MAIL");
-	        	receiveMessages();
-	        }
-	    }, 0, 600000);
-		
+		timer.scheduleAtFixedRate(new TimerTask() {
+			@Override
+			public void run() {
+				log.info("UPDATING WITH NEW MAIL");
+				receiveMessages();
+			}
+		}, 0, 600000);
+
 	}
 
 	/**
@@ -439,6 +439,11 @@ public class RootLayoutController {
 		// TODO
 	}
 
+	/**
+	 * Fired as an element is being dragged over the delete button area.
+	 * 
+	 * @param event
+	 */
 	@FXML
 	void handleDragOver(DragEvent event) {
 		log.debug("handleDragOver");
@@ -456,16 +461,22 @@ public class RootLayoutController {
 		event.consume();
 	}
 
+	/**
+	 * Fired as an element is being dropped over the delete button area. It
+	 * deletes the mail that was dropped.
+	 * 
+	 * @param event
+	 */
 	@FXML
 	void handleDropped(DragEvent event) {
 		log.debug("onDragDropped");
 
 		Dragboard db = event.getDragboard();
 		boolean success = false;
-		
+
 		if (db.hasString()) {
 			int emailId = Integer.parseInt(db.getString());
-			
+
 			try {
 				mailDAO.deleteMail(emailId);
 			} catch (SQLException e) {
@@ -474,13 +485,13 @@ public class RootLayoutController {
 			success = true;
 		}
 
-		if(success){
+		if (success) {
 			mailFXTableLayoutController.updateTableContent();
 		}
-		
+
 		/*
-		 * let the source know whether the string was
-		 * successfully transferred and used
+		 * let the source know whether the string was successfully transferred
+		 * and used
 		 */
 		event.setDropCompleted(true);// success);
 
@@ -495,14 +506,17 @@ public class RootLayoutController {
 	public void setMailDAO(MailDAO mailDAO) {
 		this.mailDAO = mailDAO;
 	}
-	
+
+	/**
+	 * Receive the new messages and put them in database
+	 */
 	private void receiveMessages() {
 		ArrayList<MailBean> mailBeans = basicSendAndReceive.receiveEmail(mailConfigBean);
-		
-		if(mailBeans != null){
+
+		if (mailBeans != null) {
 			log.info("Number of mails received: " + mailBeans.size());
-			
-			for(MailBean mailbean : mailBeans){
+
+			for (MailBean mailbean : mailBeans) {
 				try {
 					mailDAO.createMail(mailbean);
 				} catch (SQLException e) {
@@ -510,7 +524,7 @@ public class RootLayoutController {
 					e.printStackTrace();
 				}
 			}
-			
+
 			mailFXTableLayoutController.updateTableContent();
 		}
 	}
