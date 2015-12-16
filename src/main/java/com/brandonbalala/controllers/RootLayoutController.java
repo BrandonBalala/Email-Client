@@ -2,16 +2,22 @@ package com.brandonbalala.controllers;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Optional;
 import java.util.ResourceBundle;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.brandonbalala.persistence.MailDAO;
 import com.brandonbalala.persistence.MailDAOImpl;
+import com.brandonbalala.properties.MailConfigBean;
+import com.brandonbalala.properties.PropertiesManager;
 import com.brandonbalala.gui.MainAppFX;
+import com.brandonbalala.mailaction.BasicSendAndReceive;
 import com.brandonbalala.mailbean.MailBean;
 
 import javafx.application.Platform;
@@ -27,6 +33,9 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.input.DragEvent;
+import javafx.scene.input.Dragboard;
+import javafx.scene.input.TransferMode;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 
@@ -67,6 +76,11 @@ public class RootLayoutController {
 	private MailFXTableLayoutController mailFXTableLayoutController;
 	private MailFXWebViewLayoutController mailFXWebViewLayoutController;
 	private MainAppFX mainApp;
+	
+	private MailConfigBean mailConfigBean;
+	private BasicSendAndReceive basicSendAndReceive;
+	
+	private Timer timer;
 
 	/**
 	 * Constructor
@@ -106,6 +120,29 @@ public class RootLayoutController {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		
+		PropertiesManager pm = new PropertiesManager();
+		basicSendAndReceive = new BasicSendAndReceive();
+		try {
+			mailConfigBean = pm.loadTextProperties("", "mailConfig");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		receiveMailEveryTenMins();
+	}
+
+	private void receiveMailEveryTenMins() {
+		timer = new Timer();
+	    timer.scheduleAtFixedRate(new TimerTask() {
+	        @Override
+	        public void run() {
+	        	log.info("UPDATING WITH NEW MAIL");
+	        	receiveMessages();
+	        }
+	    }, 0, 600000);
+		
 	}
 
 	/**
@@ -288,6 +325,7 @@ public class RootLayoutController {
 	@FXML
 	void menuClose(ActionEvent event) {
 		log.info("Closing");
+		timer.cancel();
 		Platform.exit();
 	}
 
@@ -323,22 +361,22 @@ public class RootLayoutController {
 			e.printStackTrace();
 		}
 
-    	ChoiceDialog<String> dialog = new ChoiceDialog<>("", folderNames);
-    	dialog.setTitle("Delete Folder");
-    	dialog.setHeaderText(null);
-    	dialog.setContentText("Folder to delete:");
-    	
-    	Optional<String> result = dialog.showAndWait();
-    	if (result.isPresent()){
-    	    //System.out.println("Your choice: " + result.get());
-    		try {
+		ChoiceDialog<String> dialog = new ChoiceDialog<>("", folderNames);
+		dialog.setTitle("Delete Folder");
+		dialog.setHeaderText(null);
+		dialog.setContentText("Folder to delete:");
+
+		Optional<String> result = dialog.showAndWait();
+		if (result.isPresent()) {
+			// System.out.println("Your choice: " + result.get());
+			try {
 				mailDAO.deleteFolder(result.get());
 				mailFXTreeLayoutController.displayTree();
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-    	}
+		}
 	}
 
 	@FXML
@@ -401,6 +439,54 @@ public class RootLayoutController {
 		// TODO
 	}
 
+	@FXML
+	void handleDragOver(DragEvent event) {
+		log.debug("handleDragOver");
+
+		// Accept it only if it is not dragged from the same
+		// control and if it has a string data
+
+		if (event.getDragboard().hasString()) {
+
+			// allow for both copying and moving, whatever user
+			// chooses
+			event.acceptTransferModes(TransferMode.COPY);
+		}
+
+		event.consume();
+	}
+
+	@FXML
+	void handleDropped(DragEvent event) {
+		log.debug("onDragDropped");
+
+		Dragboard db = event.getDragboard();
+		boolean success = false;
+		
+		if (db.hasString()) {
+			int emailId = Integer.parseInt(db.getString());
+			
+			try {
+				mailDAO.deleteMail(emailId);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			success = true;
+		}
+
+		if(success){
+			mailFXTableLayoutController.updateTableContent();
+		}
+		
+		/*
+		 * let the source know whether the string was
+		 * successfully transferred and used
+		 */
+		event.setDropCompleted(true);// success);
+
+		event.consume();
+	}
+
 	/**
 	 * Set the instance of MailDAO
 	 * 
@@ -410,15 +496,22 @@ public class RootLayoutController {
 		this.mailDAO = mailDAO;
 	}
 	
-	public  MailFXTreeLayoutController getMailFXTreeLayoutController(){
-		return mailFXTreeLayoutController;
-	}
-	
-	public  MailFXTableLayoutController getMailFXTableLayoutController(){
-		return mailFXTableLayoutController;
-	}
-	
-	public  MailFXWebViewLayoutController getMailFXWebViewLayoutController(){
-		return mailFXWebViewLayoutController;
+	private void receiveMessages() {
+		ArrayList<MailBean> mailBeans = basicSendAndReceive.receiveEmail(mailConfigBean);
+		
+		if(mailBeans != null){
+			log.info("Number of mails received: " + mailBeans.size());
+			
+			for(MailBean mailbean : mailBeans){
+				try {
+					mailDAO.createMail(mailbean);
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			
+			mailFXTableLayoutController.updateTableContent();
+		}
 	}
 }

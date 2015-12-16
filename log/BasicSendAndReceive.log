@@ -8813,3 +8813,322 @@ Messages are not the same expected:<com.brandonbalala.mailbean.MailBean@dda351bb
 [DEBUG] 2015-12-15 20:52:31.992 [JavaFX Application Thread] MailBean - toFields do not match
 [DEBUG] 2015-12-15 20:52:32.431 [JavaFX Application Thread] MailBean - toFields do not match
 [DEBUG] 2015-12-15 20:52:32.431 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:15:39.086 [JavaFX Application Thread] MailFXTableLayoutController - onDragDetected
+[INFO ] 2015-12-15 21:27:15.227 [JavaFX Application Thread] MainAppFX - Configuring mail config form
+[INFO ] 2015-12-15 21:27:15.527 [JavaFX Application Thread] MailConfigFormController - Initializing the mail config bean in controller
+[INFO ] 2015-12-15 21:27:17.263 [JavaFX Application Thread] MailConfigFormController - Saving the mail config bean to disk
+[INFO ] 2015-12-15 21:27:17.271 [JavaFX Application Thread] MainAppFX - Configuring root layout
+[INFO ] 2015-12-15 21:27:17.328 [JavaFX Application Thread] RootLayoutController - Initializing the Root Layout
+[INFO ] 2015-12-15 21:27:17.328 [JavaFX Application Thread] RootLayoutController - Initializing the Tree Layout
+[INFO ] 2015-12-15 21:27:17.365 [JavaFX Application Thread] RootLayoutController - Initializing the Table Layout
+[INFO ] 2015-12-15 21:27:17.402 [JavaFX Application Thread] RootLayoutController - Initializing the Web View Layout
+[DEBUG] 2015-12-15 21:27:20.274 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:27:20.275 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:27:20.276 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:27:20.277 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:27:20.278 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:27:29.191 [JavaFX Application Thread] MailFXTableLayoutController - onDragDetected
+[DEBUG] 2015-12-15 21:27:29.775 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:27:29.783 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:27:29.799 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:27:29.815 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:27:29.823 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:27:29.831 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:27:29.839 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:27:29.847 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:27:29.863 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:27:29.871 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:27:29.879 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:27:29.887 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:27:29.895 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:27:29.911 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:27:29.919 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:27:29.936 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:27:29.943 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:27:29.959 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:27:29.975 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:27:29.991 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:27:29.999 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:27:30.049 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:27:30.111 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:27:30.173 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:27:30.238 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:27:30.299 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:27:30.335 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:27:30.391 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:27:30.399 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:27:30.407 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:27:30.415 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:27:30.423 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:27:32.256 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:27:32.257 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:27:32.983 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:27:32.984 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:32.376 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:32.377 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:32.519 [JavaFX Application Thread] MailFXTableLayoutController - onDragDetected
+[DEBUG] 2015-12-15 21:28:33.231 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:33.239 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:33.247 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:33.255 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:33.263 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:33.271 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:33.279 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:33.295 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:33.319 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:33.335 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:33.359 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:33.399 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:33.407 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:33.415 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:33.439 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:33.455 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:33.463 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:33.487 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:33.519 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:33.574 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:33.635 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:33.697 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:33.704 [JavaFX Application Thread] RootLayoutController - onDragDropped
+[DEBUG] 2015-12-15 21:28:33.778 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:33.778 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:33.778 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:33.778 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:35.767 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:35.845 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:35.846 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:35.846 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:36.373 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:36.374 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:36.375 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:36.375 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:37.175 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:37.176 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:37.177 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:37.177 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:39.023 [JavaFX Application Thread] MailFXTableLayoutController - onDragDetected
+[DEBUG] 2015-12-15 21:28:39.791 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:39.792 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:40.999 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:41.000 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:42.159 [JavaFX Application Thread] MailFXTableLayoutController - onDragDetected
+[DEBUG] 2015-12-15 21:28:42.687 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:42.695 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:42.703 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:42.711 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:42.719 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:42.727 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:42.735 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:42.743 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:42.751 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:42.759 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:42.767 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:42.775 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:42.783 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:42.823 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:42.871 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:42.879 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:42.895 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:42.911 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:42.927 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:42.967 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:43.023 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:43.075 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:43.135 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:43.175 [JavaFX Application Thread] RootLayoutController - onDragDropped
+[DEBUG] 2015-12-15 21:28:43.233 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:43.233 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:43.233 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:43.235 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:43.236 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:45.223 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:45.224 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:45.687 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:45.688 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:46.679 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:46.680 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:48.222 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:48.223 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:48.223 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:48.223 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:48.227 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:48.228 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:48.228 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:52.888 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:52.889 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:54.208 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:54.208 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:54.984 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:54.984 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:56.071 [JavaFX Application Thread] MailFXTableLayoutController - onDragDetected
+[DEBUG] 2015-12-15 21:28:56.599 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:56.607 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:56.615 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:56.623 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:56.631 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:56.639 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:56.647 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:56.655 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:56.663 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:56.671 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:56.679 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:56.687 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:56.695 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:56.703 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:56.727 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:56.787 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:56.791 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:56.848 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:56.871 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:56.926 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:56.991 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:57.050 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:57.114 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:57.176 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:57.240 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:57.300 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:57.362 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:57.427 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:57.489 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:57.551 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:57.614 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:57.675 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:57.738 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:57.800 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:57.862 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:57.924 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:57.986 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:58.051 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:58.113 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:58.175 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:58.238 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:58.300 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:58.362 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:58.423 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:58.488 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:58.551 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:28:58.583 [JavaFX Application Thread] RootLayoutController - onDragDropped
+[DEBUG] 2015-12-15 21:28:58.630 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:58.630 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:58.630 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:28:58.633 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:29:00.735 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:29:00.736 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:29:01.383 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:29:01.384 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:29:01.936 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:29:01.936 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:29:01.936 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:29:01.939 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:29:01.940 [JavaFX Application Thread] MailBean - toFields do not match
+[DEBUG] 2015-12-15 21:29:01.941 [JavaFX Application Thread] MailBean - toFields do not match
+[INFO ] 2015-12-15 21:48:55.318 [JavaFX Application Thread] MainAppFX - Configuring mail config form
+[INFO ] 2015-12-15 21:48:55.760 [JavaFX Application Thread] MailConfigFormController - Initializing the mail config bean in controller
+[INFO ] 2015-12-15 21:48:58.280 [JavaFX Application Thread] MailConfigFormController - Saving the mail config bean to disk
+[INFO ] 2015-12-15 21:48:58.288 [JavaFX Application Thread] MainAppFX - Configuring root layout
+[INFO ] 2015-12-15 21:48:58.364 [JavaFX Application Thread] RootLayoutController - Initializing the Root Layout
+[INFO ] 2015-12-15 21:48:58.365 [JavaFX Application Thread] RootLayoutController - Initializing the Tree Layout
+[INFO ] 2015-12-15 21:48:58.435 [JavaFX Application Thread] RootLayoutController - Initializing the Table Layout
+[INFO ] 2015-12-15 21:48:58.530 [JavaFX Application Thread] RootLayoutController - Initializing the Web View Layout
+[INFO ] 2015-12-15 21:49:03.603 [JavaFX Application Thread] RootLayoutController - Changing language to french
+[INFO ] 2015-12-15 21:49:03.603 [JavaFX Application Thread] MainAppFX - Configuring root layout
+[INFO ] 2015-12-15 21:49:03.643 [JavaFX Application Thread] RootLayoutController - Initializing the Root Layout
+[INFO ] 2015-12-15 21:49:03.643 [JavaFX Application Thread] RootLayoutController - Initializing the Tree Layout
+[INFO ] 2015-12-15 21:49:03.648 [JavaFX Application Thread] RootLayoutController - Initializing the Table Layout
+[INFO ] 2015-12-15 21:49:03.654 [JavaFX Application Thread] RootLayoutController - Initializing the Web View Layout
+[DEBUG] 2015-12-15 21:49:09.679 [JavaFX Application Thread] MailFXTableLayoutController - onDragDetected
+[DEBUG] 2015-12-15 21:49:10.039 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:49:10.047 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:49:10.055 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:49:10.063 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:49:10.079 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:49:10.095 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:49:10.145 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:49:10.199 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:49:10.223 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:49:10.239 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:49:10.263 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:49:10.279 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:49:10.295 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:49:10.349 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:49:10.410 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:49:10.475 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:49:10.535 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:49:10.543 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:49:10.551 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:49:10.559 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[DEBUG] 2015-12-15 21:49:10.567 [JavaFX Application Thread] RootLayoutController - handleDragOver
+[INFO ] 2015-12-15 22:52:38.499 [JavaFX Application Thread] MainAppFX - Configuring mail config form
+[INFO ] 2015-12-15 22:52:38.794 [JavaFX Application Thread] MailConfigFormController - Initializing the mail config bean in controller
+[INFO ] 2015-12-15 22:52:41.280 [JavaFX Application Thread] MailConfigFormController - Saving the mail config bean to disk
+[INFO ] 2015-12-15 22:52:41.288 [JavaFX Application Thread] MainAppFX - Configuring root layout
+[INFO ] 2015-12-15 22:52:41.345 [JavaFX Application Thread] RootLayoutController - Initializing the Root Layout
+[INFO ] 2015-12-15 22:52:41.345 [JavaFX Application Thread] RootLayoutController - Initializing the Tree Layout
+[INFO ] 2015-12-15 22:52:41.383 [JavaFX Application Thread] RootLayoutController - Initializing the Table Layout
+[INFO ] 2015-12-15 22:52:41.420 [JavaFX Application Thread] RootLayoutController - Initializing the Web View Layout
+[INFO ] 2015-12-15 22:52:41.919 [Timer-0] RootLayoutController - UPDATING WITH NEW MAIL
+[INFO ] 2015-12-15 23:01:05.543 [JavaFX Application Thread] MainAppFX - Configuring mail config form
+[INFO ] 2015-12-15 23:01:05.814 [JavaFX Application Thread] MailConfigFormController - Initializing the mail config bean in controller
+[INFO ] 2015-12-15 23:01:08.184 [JavaFX Application Thread] MailConfigFormController - Saving the mail config bean to disk
+[INFO ] 2015-12-15 23:01:08.193 [JavaFX Application Thread] MainAppFX - Configuring root layout
+[INFO ] 2015-12-15 23:01:08.249 [JavaFX Application Thread] RootLayoutController - Initializing the Root Layout
+[INFO ] 2015-12-15 23:01:08.250 [JavaFX Application Thread] RootLayoutController - Initializing the Tree Layout
+[INFO ] 2015-12-15 23:01:08.285 [JavaFX Application Thread] RootLayoutController - Initializing the Table Layout
+[INFO ] 2015-12-15 23:01:08.319 [JavaFX Application Thread] RootLayoutController - Initializing the Web View Layout
+[INFO ] 2015-12-15 23:01:08.779 [Timer-0] RootLayoutController - UPDATING WITH NEW MAIL
+[INFO ] 2015-12-15 23:01:14.347 [JavaFX Application Thread] RootLayoutController - Closing
+[INFO ] 2015-12-15 23:01:45.599 [JavaFX Application Thread] MainAppFX - Configuring mail config form
+[INFO ] 2015-12-15 23:01:45.880 [JavaFX Application Thread] MailConfigFormController - Initializing the mail config bean in controller
+[INFO ] 2015-12-15 23:01:47.953 [JavaFX Application Thread] MailConfigFormController - Saving the mail config bean to disk
+[INFO ] 2015-12-15 23:01:47.961 [JavaFX Application Thread] MainAppFX - Configuring root layout
+[INFO ] 2015-12-15 23:01:48.020 [JavaFX Application Thread] RootLayoutController - Initializing the Root Layout
+[INFO ] 2015-12-15 23:01:48.021 [JavaFX Application Thread] RootLayoutController - Initializing the Tree Layout
+[INFO ] 2015-12-15 23:01:48.055 [JavaFX Application Thread] RootLayoutController - Initializing the Table Layout
+[INFO ] 2015-12-15 23:01:48.092 [JavaFX Application Thread] RootLayoutController - Initializing the Web View Layout
+[INFO ] 2015-12-15 23:01:48.568 [Timer-0] RootLayoutController - UPDATING WITH NEW MAIL
+[INFO ] 2015-12-15 23:04:07.204 [JavaFX Application Thread] MainAppFX - Configuring mail config form
+[INFO ] 2015-12-15 23:04:07.496 [JavaFX Application Thread] MailConfigFormController - Initializing the mail config bean in controller
+[INFO ] 2015-12-15 23:04:09.273 [JavaFX Application Thread] MailConfigFormController - Saving the mail config bean to disk
+[INFO ] 2015-12-15 23:04:09.281 [JavaFX Application Thread] MainAppFX - Configuring root layout
+[INFO ] 2015-12-15 23:04:09.333 [JavaFX Application Thread] RootLayoutController - Initializing the Root Layout
+[INFO ] 2015-12-15 23:04:09.333 [JavaFX Application Thread] RootLayoutController - Initializing the Tree Layout
+[INFO ] 2015-12-15 23:04:09.368 [JavaFX Application Thread] RootLayoutController - Initializing the Table Layout
+[INFO ] 2015-12-15 23:04:09.404 [JavaFX Application Thread] RootLayoutController - Initializing the Web View Layout
+[INFO ] 2015-12-15 23:04:09.863 [Timer-0] RootLayoutController - UPDATING WITH NEW MAIL
+[INFO ] 2015-12-15 23:05:24.959 [JavaFX Application Thread] MainAppFX - Configuring mail config form
+[INFO ] 2015-12-15 23:05:25.249 [JavaFX Application Thread] MailConfigFormController - Initializing the mail config bean in controller
+[INFO ] 2015-12-15 23:05:29.448 [JavaFX Application Thread] MailConfigFormController - Saving the mail config bean to disk
+[INFO ] 2015-12-15 23:05:29.456 [JavaFX Application Thread] MainAppFX - Configuring root layout
+[INFO ] 2015-12-15 23:05:29.506 [JavaFX Application Thread] RootLayoutController - Initializing the Root Layout
+[INFO ] 2015-12-15 23:05:29.506 [JavaFX Application Thread] RootLayoutController - Initializing the Tree Layout
+[INFO ] 2015-12-15 23:05:29.540 [JavaFX Application Thread] RootLayoutController - Initializing the Table Layout
+[INFO ] 2015-12-15 23:05:29.574 [JavaFX Application Thread] RootLayoutController - Initializing the Web View Layout
+[INFO ] 2015-12-15 23:05:30.049 [Timer-0] RootLayoutController - UPDATING WITH NEW MAIL
+[INFO ] 2015-12-15 23:08:35.757 [JavaFX Application Thread] MainAppFX - Configuring mail config form
+[INFO ] 2015-12-15 23:08:36.033 [JavaFX Application Thread] MailConfigFormController - Initializing the mail config bean in controller
+[INFO ] 2015-12-15 23:08:38.001 [JavaFX Application Thread] MailConfigFormController - Saving the mail config bean to disk
+[INFO ] 2015-12-15 23:08:38.008 [JavaFX Application Thread] MainAppFX - Configuring root layout
+[INFO ] 2015-12-15 23:08:38.066 [JavaFX Application Thread] RootLayoutController - Initializing the Root Layout
+[INFO ] 2015-12-15 23:08:38.067 [JavaFX Application Thread] RootLayoutController - Initializing the Tree Layout
+[INFO ] 2015-12-15 23:08:38.102 [JavaFX Application Thread] RootLayoutController - Initializing the Table Layout
+[INFO ] 2015-12-15 23:08:38.136 [JavaFX Application Thread] RootLayoutController - Initializing the Web View Layout
+[INFO ] 2015-12-15 23:08:38.601 [Timer-0] RootLayoutController - UPDATING WITH NEW MAIL
+[INFO ] 2015-12-15 23:09:11.434 [JavaFX Application Thread] MainAppFX - Configuring mail config form
+[INFO ] 2015-12-15 23:09:11.690 [JavaFX Application Thread] MailConfigFormController - Initializing the mail config bean in controller
+[INFO ] 2015-12-15 23:09:13.217 [JavaFX Application Thread] MailConfigFormController - Saving the mail config bean to disk
+[INFO ] 2015-12-15 23:09:13.224 [JavaFX Application Thread] MainAppFX - Configuring root layout
+[INFO ] 2015-12-15 23:09:13.284 [JavaFX Application Thread] RootLayoutController - Initializing the Root Layout
+[INFO ] 2015-12-15 23:09:13.284 [JavaFX Application Thread] RootLayoutController - Initializing the Tree Layout
+[INFO ] 2015-12-15 23:09:13.319 [JavaFX Application Thread] RootLayoutController - Initializing the Table Layout
+[INFO ] 2015-12-15 23:09:13.354 [JavaFX Application Thread] RootLayoutController - Initializing the Web View Layout
+[INFO ] 2015-12-15 23:09:13.824 [Timer-0] RootLayoutController - UPDATING WITH NEW MAIL
+[INFO ] 2015-12-15 23:09:23.825 [Timer-0] RootLayoutController - UPDATING WITH NEW MAIL
+[INFO ] 2015-12-15 23:09:33.824 [Timer-0] RootLayoutController - UPDATING WITH NEW MAIL
+[INFO ] 2015-12-15 23:09:43.825 [Timer-0] RootLayoutController - UPDATING WITH NEW MAIL
+[INFO ] 2015-12-15 23:09:53.824 [Timer-0] RootLayoutController - UPDATING WITH NEW MAIL
+[INFO ] 2015-12-15 23:10:03.825 [Timer-0] RootLayoutController - UPDATING WITH NEW MAIL
+[INFO ] 2015-12-15 23:10:13.825 [Timer-0] RootLayoutController - UPDATING WITH NEW MAIL
+[INFO ] 2015-12-15 23:10:23.824 [Timer-0] RootLayoutController - UPDATING WITH NEW MAIL
+[INFO ] 2015-12-15 23:10:33.825 [Timer-0] RootLayoutController - UPDATING WITH NEW MAIL
+[INFO ] 2015-12-15 23:10:43.824 [Timer-0] RootLayoutController - UPDATING WITH NEW MAIL
+[INFO ] 2015-12-15 23:10:53.825 [Timer-0] RootLayoutController - UPDATING WITH NEW MAIL

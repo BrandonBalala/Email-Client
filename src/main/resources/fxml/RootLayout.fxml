@@ -43,6 +43,7 @@
                   <Button minWidth="60.0" mnemonicParsing="false" onAction="#createFolder" prefWidth="90.0" text="%NEW" />
                   <Button minWidth="60.0" mnemonicParsing="false" onAction="#deleteFolder" prefWidth="90.0" text="%DELETE" />
                 <Button minWidth="60.0" mnemonicParsing="false" onAction="#sendMail" prefWidth="90.0" text="%COMPOSE" />
+                  <Button minWidth="60.0" mnemonicParsing="false" onDragDropped="#handleDropped" onDragOver="#handleDragOver" prefWidth="90.0" text="%DELETEMAIL" />
                 <Pane HBox.hgrow="ALWAYS" />
                 <HBox>
                    <children>

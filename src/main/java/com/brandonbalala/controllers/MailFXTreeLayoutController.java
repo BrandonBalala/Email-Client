@@ -139,9 +139,6 @@ public class MailFXTreeLayoutController {
 					public void handle(DragEvent event) {
 						log.debug("onDragOver");
 
-						// Accept it only if it is not dragged from the same
-						// control and if it has a string data
-
 						if (event.getDragboard().hasString()) {
 
 							// allow for both copying and moving, whatever user
@@ -233,23 +230,5 @@ public class MailFXTreeLayoutController {
 	public void setRootLayout(RootLayoutController rootLayoutController) {
 		this.rootLayoutController = rootLayoutController;
 	}
-
-	/*
-	 * @FXML private void dragOver(DragEvent event) { data is dragged over the
-	 * target log.debug("onDragOver");
-	 * 
-	 * 
-	 * Accept it only if it is not dragged from the same control and if it has a
-	 * string data
-	 * 
-	 * if (event.getGestureSource() != mailFXTreeView &&
-	 * event.getDragboard().hasString()) {
-	 * 
-	 * allow for both copying and moving, whatever user chooses
-	 * 
-	 * event.acceptTransferModes(TransferMode.COPY); }
-	 * 
-	 * event.consume(); }
-	 */
 
 }
