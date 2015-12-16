@@ -1,5 +1,6 @@
 package com.brandonbalala.persistence;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -13,6 +14,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.brandonbalala.mailbean.MailBean;
+import com.brandonbalala.properties.MailConfigBean;
+import com.brandonbalala.properties.PropertiesManager;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -28,18 +31,31 @@ import jodd.mail.EmailAttachmentBuilder;
  */
 public class MailDAOImpl implements MailDAO {
 	
-	private final String url = "jdbc:mysql://localhost:3306/EMAIL_DB";
+	private MailConfigBean mailConfigBean;
+	private String url;
 
-    private final String user = "root";
-    private final String password = "";
-    
-    private final Logger log = LoggerFactory.getLogger(this.getClass().getName());
+    private String user;
+    private String password;
     
 	public MailDAOImpl() {
 		super();
+		setProperties();
 	}
 	
-    /**
+    private void setProperties() {
+		try {
+			PropertiesManager pm = new PropertiesManager();
+			mailConfigBean = pm.loadTextProperties("", "mailConfig");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		url = mailConfigBean.getUrl() + ":" + String.valueOf(mailConfigBean.getPort()) + "/" + mailConfigBean.getDatabase();
+		user = mailConfigBean.getDbUsername();
+		password = mailConfigBean.getDbPassword();
+	}
+
+	/**
      * Method that adds a MailBean object as a record to the database
      * 
      * @param mail
@@ -754,31 +770,31 @@ public class MailDAOImpl implements MailDAO {
      * @throws SQLException
      */
 	@Override
-	public int update(MailBean mailbean, String newFolderName) throws SQLException {
+	public int update(int id, String newFolderName) throws SQLException {
 		int result = 0;
 		int folderId = 0;
 		
-		String query = "SELECT folder FROM MAIL"
-				+ " WHERE id = ?";
+		String query = "SELECT id FROM FOLDER"
+				+ " WHERE name = ?";
 		try (Connection connection = DriverManager.getConnection(url, user, password);
 				PreparedStatement ps = connection.prepareStatement(query);) {
-			ps.setInt(1, mailbean.getId());
+			ps.setString(1, newFolderName);
 			
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()){
-				folderId = rs.getInt("folder");
+				folderId = rs.getInt("id");
 			}
 		}
 		
 		if(folderId != 0){
-			query = "UPDATE FOLDER"
-					+ " SET name = ?"
+			query = "UPDATE MAIL"
+					+ " SET folder = ?"
 					+ " WHERE id = ?";
 			
 			try(Connection connection = DriverManager.getConnection(url, user, password)){
 				PreparedStatement ps = connection.prepareStatement(query);	
-				ps.setString(1, newFolderName);
-				ps.setInt(2, folderId);
+				ps.setInt(1, folderId);
+				ps.setInt(2, id);
 					
 				result = ps.executeUpdate();
 			}
@@ -997,5 +1013,24 @@ public class MailDAOImpl implements MailDAO {
 		}
 		
 		return dateTime;
+	}
+
+	@Override
+	public ObservableList<String> findAllFolderNamesObs() throws SQLException {
+		String query = "SELECT name"
+				+ " FROM FOLDER";
+	
+		ObservableList<String> folderList = FXCollections.observableArrayList();
+		
+		try(Connection connection = DriverManager.getConnection(url, user, password)){
+			PreparedStatement ps = connection.prepareStatement(query);	
+			
+			ResultSet resultSet = ps.executeQuery();
+			while (resultSet.next()) {
+				folderList.add(resultSet.getString("name"));
+			}	
+		}
+			
+		return folderList;
 	}
 }

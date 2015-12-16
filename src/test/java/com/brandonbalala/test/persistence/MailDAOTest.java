@@ -1159,35 +1159,6 @@ public class MailDAOTest {
 	}
 	
 	/**
-	 * Tests update folder name for a mailbean
-	 */
-	
-	@Test
-	public void testUpdateFolderNameForMailBean() {
-		MailDAOImpl md = new MailDAOImpl();
-		
-		MailBean mailBean = new MailBean();
-		mailBean.getToField().add("cs.balala.receive@gmail.com");
-		mailBean.setFromField("cs.balala.send@gmail.com");
-		mailBean.setSubjectField("TEST");
-		mailBean.setTextMessageField("This is the text of the message");
-		mailBean.setFolder("TEST_FOLDER");
-		
-		int rowsUpdated = 0;
-		
-		try {
-			md.createMail(mailBean);
-			
-			rowsUpdated = md.update(mailBean, mailBean.getFolder());		
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		
-		//Expected to update 1 row
-		assertEquals("Did not update", 1, rowsUpdated);
-	}
-	
-	/**
 	 * This tests find email address by id
 	 * When creating addresses in tables it  
 	 * adds the types of email address in this order:

@@ -35,10 +35,11 @@ public interface MailDAO {
 	public ObservableList<MailBean> findAllFolder() throws SQLException;
 	public ObservableList<MailBean> findAllMail () throws SQLException;
 	public ArrayList<String> findAllFolderNames() throws SQLException;
+	public ObservableList<String> findAllFolderNamesObs() throws SQLException;
 	
 	//Update
 	public int update(String folderName, String newName) throws SQLException;
-	public int update(MailBean mailbean, String newFolderName) throws SQLException;
+	public int update(int id, String newFolderName) throws SQLException;
 	
 	//Delete
 	public int deleteFolder(String name) throws SQLException;

@@ -83,7 +83,7 @@ public class MailBean {
 		this.htmlMessageField = new SimpleStringProperty(""); 
 		this.embedField = new ArrayList<>(); 
 		this.attachField = new ArrayList<>(); 
-		this.folder = new SimpleStringProperty("");
+		this.folder = new SimpleStringProperty("Inbox");
 		this.mailStatus = new SimpleIntegerProperty(0);
 		this.dateSent = new SimpleObjectProperty<LocalDateTime>(LocalDateTime.now());
 		this.dateReceived = new SimpleObjectProperty<LocalDateTime>(LocalDateTime.now());

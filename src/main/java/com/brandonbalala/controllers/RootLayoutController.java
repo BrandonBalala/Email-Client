@@ -3,6 +3,7 @@ package com.brandonbalala.controllers;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Locale;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 import org.slf4j.Logger;
@@ -21,6 +22,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceDialog;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -136,6 +138,7 @@ public class RootLayoutController {
 			// Give the controller the data object.
 			mailFXTableLayoutController = loader.getController();
 			mailFXTableLayoutController.setMailDAO(mailDAO);
+			mailFXTableLayoutController.setRootLayout(this);
 			tableBorderPane.setCenter(tableView);
 		} catch (SQLException | IOException e) {
 			e.printStackTrace();
@@ -207,6 +210,13 @@ public class RootLayoutController {
 	void sendMail(ActionEvent event) {
 		log.info("Showing send mail dialog");
 		mainApp.showSendMailDialog();
+		try {
+			mailFXTreeLayoutController.displayTree();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		mailFXTableLayoutController.updateTableContent();
 	}
 
 	/**
@@ -305,9 +315,30 @@ public class RootLayoutController {
 	 * @param event
 	 */
 	@FXML
-	void deleteMail(ActionEvent event) {
-		log.info("Delete mail");
-		// TODO
+	void deleteFolder(ActionEvent event) {
+		ObservableList<String> folderNames = FXCollections.observableArrayList();
+		try {
+			folderNames = mailDAO.findAllFolderNamesObs();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+    	ChoiceDialog<String> dialog = new ChoiceDialog<>("", folderNames);
+    	dialog.setTitle("Delete Folder");
+    	dialog.setHeaderText(null);
+    	dialog.setContentText("Folder to delete:");
+    	
+    	Optional<String> result = dialog.showAndWait();
+    	if (result.isPresent()){
+    	    //System.out.println("Your choice: " + result.get());
+    		try {
+				mailDAO.deleteFolder(result.get());
+				mailFXTreeLayoutController.displayTree();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+    	}
 	}
 
 	@FXML
@@ -377,5 +408,17 @@ public class RootLayoutController {
 	 */
 	public void setMailDAO(MailDAO mailDAO) {
 		this.mailDAO = mailDAO;
+	}
+	
+	public  MailFXTreeLayoutController getMailFXTreeLayoutController(){
+		return mailFXTreeLayoutController;
+	}
+	
+	public  MailFXTableLayoutController getMailFXTableLayoutController(){
+		return mailFXTableLayoutController;
+	}
+	
+	public  MailFXWebViewLayoutController getMailFXWebViewLayoutController(){
+		return mailFXWebViewLayoutController;
 	}
 }

@@ -1,5 +1,6 @@
 package com.brandonbalala.controllers;
 
+import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -22,6 +23,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.web.HTMLEditor;
+import javafx.stage.FileChooser;
+import javafx.stage.FileChooser.ExtensionFilter;
+import jodd.mail.EmailAttachment;
+import jodd.mail.EmailAttachmentBuilder;
 import javafx.stage.Stage;
 
 public class MailFXHTMLEditorLayoutController {
@@ -58,6 +63,7 @@ public class MailFXHTMLEditorLayoutController {
 	private MailDAO mailDAO;
 	private Stage dialogStage;
 	private boolean sendClicked = false;
+	private ArrayList<EmailAttachment> attachments;
 
 	/**
 	 * Constructor
@@ -74,11 +80,20 @@ public class MailFXHTMLEditorLayoutController {
 	 */
 	@FXML
 	void attachFile(ActionEvent event) {
-		// TODO
-		/*
-		 * FileChooser fileChooser = new FileChooser(); fileChooser.setTitle(
-		 * "Choose files to attach"); fileChooser.showOpenDialog(stage);
-		 */
+		 FileChooser fileChooser = new FileChooser();
+		 fileChooser.setTitle("Open Resource File");
+		 fileChooser.getExtensionFilters().addAll(
+		         new ExtensionFilter("Text Files", "*.txt"),
+		         new ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif"),
+		         new ExtensionFilter("Audio Files", "*.wav", "*.mp3", "*.aac"),
+		         new ExtensionFilter("All Files", "*.*"));
+		 File selectedFile = fileChooser.showOpenDialog(attachButton.getScene().getWindow());
+		 
+		 if (selectedFile != null) {
+			EmailAttachmentBuilder eab = EmailAttachment.attachment().bytes(selectedFile);
+			EmailAttachment ea = eab.create();
+			attachments.add(ea);
+		 }
 	}
 
 	/**
@@ -128,6 +143,11 @@ public class MailFXHTMLEditorLayoutController {
 			mb.setSubjectField(subject);
 			mb.setHTMLMessageField(htmlMessage);
 			mb.setFromField(mailConfigBean.getUserEmailAddress());
+			mb.setFolder("Sent");
+			
+			for(EmailAttachment attachment :attachments){
+				mb.getAttachField().add(attachment);
+			}
 
 			try {
 				//Sending
@@ -144,6 +164,22 @@ public class MailFXHTMLEditorLayoutController {
 				displayErrorMessage(resources.getString("ERRORSENDING"), resources.getString("ERRORTRYAGAIN"));
 		    }
 		}
+		
+		receiveMessages();
+	}
+
+	private void receiveMessages() {
+		ArrayList<MailBean> mailBeans = basicSendAndReceive.receiveEmail(mailConfigBean);
+		log.info("Number of mails received: " + mailBeans.size());
+		
+		for(MailBean mailbean : mailBeans){
+			try {
+				mailDAO.createMail(mailbean);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 	}
 
 	/**
@@ -152,6 +188,8 @@ public class MailFXHTMLEditorLayoutController {
 	 */
 	@FXML
 	private void initialize() {
+		attachments = new ArrayList<EmailAttachment>();
+		
 		PropertiesManager pm = new PropertiesManager();
 		basicSendAndReceive = new BasicSendAndReceive();
 		try {
@@ -160,7 +198,8 @@ public class MailFXHTMLEditorLayoutController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
+		
+		
 	}
 
 	/**

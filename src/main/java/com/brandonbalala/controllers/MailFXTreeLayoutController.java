@@ -10,14 +10,19 @@ import com.brandonbalala.mailbean.MailBean;
 import com.brandonbalala.persistence.MailDAO;
 
 import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.TreeCell;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
+import javafx.scene.input.DragEvent;
+import javafx.scene.input.Dragboard;
+import javafx.scene.input.TransferMode;
 
 /**
  * Manipulates the tree related actions. It displays all the folders in the
- * following tree view.  Once these items clicked, they will be displayed onto the table view
+ * following tree view. Once these items clicked, they will be displayed onto
+ * the table view
  * 
  * @author Brandon
  *
@@ -79,16 +84,75 @@ public class MailFXTreeLayoutController {
 		// This cell factory is used to choose which field in the FihDta object
 		// is used for the node name
 		mailFXTreeView.setCellFactory((e) -> new TreeCell<MailBean>() {
+			private String folderName;
+
 			@Override
 			protected void updateItem(MailBean item, boolean empty) {
 				super.updateItem(item, empty);
 				if (item != null) {
+					folderName = item.getFolder();
 					setText(item.getFolder());
 					setGraphic(getTreeItem().getGraphic());
 				} else {
 					setText("");
 					setGraphic(null);
 				}
+
+				setOnDragDropped(new EventHandler<DragEvent>() {
+
+					@Override
+					public void handle(DragEvent event) {
+						log.debug("onDragDropped");
+						log.debug("Folder name: " + folderName);
+
+						Dragboard db = event.getDragboard();
+						boolean success = false;
+						if (db.hasString()) {
+							int emailId = Integer.parseInt(db.getString());
+							
+							try {
+								mailDAO.update(emailId, folderName);
+							} catch (SQLException e) {
+								e.printStackTrace();
+							}
+							success = true;
+						}
+
+						if(success){
+							mailFXTableLayoutController.updateTableContent();
+						}
+						
+						/*
+						 * let the source know whether the string was
+						 * successfully transferred and used
+						 */
+						event.setDropCompleted(true);// success);
+
+						event.consume();
+					}
+
+				});
+
+				setOnDragOver(new EventHandler<DragEvent>() {
+
+					@Override
+					public void handle(DragEvent event) {
+						log.debug("onDragOver");
+
+						// Accept it only if it is not dragged from the same
+						// control and if it has a string data
+
+						if (event.getDragboard().hasString()) {
+
+							// allow for both copying and moving, whatever user
+							// chooses
+							event.acceptTransferModes(TransferMode.COPY);
+						}
+
+						event.consume();
+
+					}
+				});
 			}
 		});
 	}
@@ -105,6 +169,7 @@ public class MailFXTreeLayoutController {
 
 		// Build an item for each fish and add it to the root
 		if (folderNames != null) {
+			mailFXTreeView.getRoot().getChildren().clear();
 			for (MailBean fn : folderNames) {
 				TreeItem<MailBean> item = new TreeItem<>(fn);
 				// item.setGraphic(new
@@ -134,7 +199,10 @@ public class MailFXTreeLayoutController {
 		ObservableList<MailBean> mbList;
 
 		try {
-			mbList = mailDAO.findMailByFolderName(mailBean.getValue().getFolder());
+			String folderName = mailBean.getValue().getFolder();
+			mailFXTableLayoutController.setCurrentFolderNameDisplayed(folderName);
+
+			mbList = mailDAO.findMailByFolderName(folderName);
 
 			if (mbList.size() > 0)
 				rootLayoutController.setFooterLabelText(mbList.size() + " result(s) found");
@@ -165,5 +233,23 @@ public class MailFXTreeLayoutController {
 	public void setRootLayout(RootLayoutController rootLayoutController) {
 		this.rootLayoutController = rootLayoutController;
 	}
+
+	/*
+	 * @FXML private void dragOver(DragEvent event) { data is dragged over the
+	 * target log.debug("onDragOver");
+	 * 
+	 * 
+	 * Accept it only if it is not dragged from the same control and if it has a
+	 * string data
+	 * 
+	 * if (event.getGestureSource() != mailFXTreeView &&
+	 * event.getDragboard().hasString()) {
+	 * 
+	 * allow for both copying and moving, whatever user chooses
+	 * 
+	 * event.acceptTransferModes(TransferMode.COPY); }
+	 * 
+	 * event.consume(); }
+	 */
 
 }
